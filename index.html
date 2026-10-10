@@ -1,0 +1,2727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>King Salman International Airport - ERT Roles Training</title>
+    <meta name="description" content="Training and assessment application on Emergency Response Team (ERT) roles for administrative personnel at King Salman International Airport." />
+    <meta property="og:title" content="King Salman International Airport - ERT Roles Training" />
+    <meta property="og:description" content="Training and assessment application on Emergency Response Team (ERT) roles for administrative personnel at King Salman International Airport." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              aviation: {
+                950: '#060D17',
+                900: '#0B192C',
+                800: '#152C4B',
+                700: '#1E3E62',
+                600: '#2A527F',
+                500: '#386FA4',
+                100: '#E2EAF4',
+                50: '#F0F5FA'
+              },
+              safety: {
+                500: '#F59E0B',
+                600: '#D97706',
+                700: '#B45309',
+                100: '#FEF3C7',
+                50: '#FFFBEB'
+              }
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- jsPDF CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        background-color: #070E18;
+        color: #F1F5F9;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .font-arabic {
+        font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+      }
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0B192C;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1E3E62;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #386FA4;
+      }
+      @keyframes bleepPulse {
+        0%, 100% {
+          box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7), 0 4px 14px rgba(245, 158, 11, 0.35);
+          transform: scale(1);
+        }
+        50% {
+          box-shadow: 0 0 0 10px rgba(245, 158, 11, 0), 0 6px 20px rgba(245, 158, 11, 0.55);
+          transform: scale(1.02);
+        }
+      }
+      .bleep-glow {
+        animation: bleepPulse 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+      }
+      @media print {
+        body {
+          background-color: #ffffff !important;
+          color: #0f172a !important;
+        }
+        header, footer, nav, #splashPageModal, #timeWarningModal, #stickyWarningBanner, #customNoticeModal, #customConfirmModal, #phaseLearning, #phaseAssessment, button, .no-print {
+          display: none !important;
+        }
+        #phaseReport {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .bg-aviation-950, .bg-aviation-900, .bg-aviation-900\/60, .bg-aviation-900\/50, .bg-aviation-900\/40 {
+          background-color: #ffffff !important;
+          border-color: #cbd5e1 !important;
+          color: #0f172a !important;
+        }
+        .text-white {
+          color: #0f172a !important;
+        }
+        .text-slate-100, .text-slate-200, .text-slate-300, .text-slate-400 {
+          color: #334155 !important;
+        }
+        .border-aviation-800, .border-aviation-700 {
+          border-color: #e2e8f0 !important;
+        }
+        table thead {
+          background-color: #f1f5f9 !important;
+        }
+        table thead th {
+          color: #1e293b !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#070E18] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-amber-500 selection:text-slate-900">
+
+    <!-- TOP NAVIGATION BAR (STREAMLINED, ZERO SUB-MENU DISTRACTORS, MOBILE-FIRST) -->
+    <header class="sticky top-0 z-40 bg-aviation-950/95 backdrop-blur-md border-b border-aviation-800/80 px-3 py-2 sm:px-4 sm:py-2.5 transition-all">
+      <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
+        
+        <!-- Brand Title -->
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink min-w-0">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-aviation-700 to-aviation-900 border border-aviation-600 flex items-center justify-center shadow-md shrink-0">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-safety-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+              <path d="M12 7v8"/>
+              <path d="M9 11l3-3 3 3"/>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[9px] uppercase tracking-wider text-safety-500 font-bold leading-none truncate">
+              KSIA · مطار الملك سلمان الدولي
+            </div>
+            <h1 class="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight leading-tight truncate">
+              ERT Roles Training & Assessment
+            </h1>
+          </div>
+        </div>
+
+        <!-- Timer & Controls (Zero top sub-menu, optimal for mobile) -->
+        <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <!-- Countdown Timer -->
+          <div id="timerContainer" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-aviation-900 border border-aviation-700 shadow-inner">
+            <svg class="w-3.5 h-3.5 text-safety-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <div class="flex flex-col">
+              <span class="text-[8px] uppercase font-semibold text-slate-400 tracking-wider leading-none">Time Left</span>
+              <span id="countdownTimer" class="text-xs sm:text-sm font-mono font-bold text-white tabular-nums leading-tight">25:00</span>
+            </div>
+          </div>
+
+          <!-- Controls: Arabic Toggle -->
+          <button id="toggleArabicBtn" onclick="toggleArabicSupport()" class="px-2.5 py-1.5 text-xs font-bold rounded-lg border border-aviation-700 bg-aviation-900 hover:bg-aviation-800 text-safety-500 transition-colors flex items-center gap-1 cursor-pointer shrink-0" title="Toggle Arabic support">
+            <span>عربي</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- SPLASH PAGE / PARTICIPANT REGISTRATION WELCOME GATE (ENGLISH ONLY, EMPTY INPUTS) -->
+    <div id="splashPageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 overflow-y-auto">
+      <div class="bg-[#0B192C] border-2 border-aviation-700/80 rounded-3xl max-w-lg w-full p-5 sm:p-8 shadow-2xl relative my-auto">
+        
+        <!-- KSIA Header Emblem (English Only) -->
+        <div class="flex items-center gap-3 pb-4 border-b border-aviation-800">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-aviation-700 to-aviation-900 border border-aviation-600 flex items-center justify-center shadow-md shrink-0">
+            <svg class="w-6 h-6 text-safety-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+              <path d="M12 7v8"/>
+              <path d="M9 11l3-3 3 3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-[10px] uppercase tracking-wider text-safety-500 font-bold">
+              KING SALMAN INTERNATIONAL AIRPORT
+            </div>
+            <h2 class="text-base sm:text-lg font-bold text-white tracking-tight leading-tight">
+              Emergency Response Team (ERT) Training
+            </h2>
+            <div class="text-xs text-slate-400">
+              Administrative Personnel · Session Setup
+            </div>
+          </div>
+        </div>
+
+        <!-- Session Briefing Box (English Only) -->
+        <div class="mt-4 bg-aviation-950 p-3.5 rounded-2xl border border-aviation-800 text-xs text-slate-300 space-y-2">
+          <div class="flex items-center justify-between text-[11px] font-semibold text-safety-400">
+            <span>⏱️ Max Duration: 25 Minutes</span>
+            <span>📋 5 ERT Roles</span>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">
+            Welcome to the KSIA Administrative ERT program. Please enter your credentials below. Every participant must complete a minimum of two role assessment tests to complete the evaluation. The 25-minute timer will activate once you click start.
+          </p>
+        </div>
+
+        <!-- Form: Full Name, Employee ID, Date of Assessment (English Only, Inputs NOT Prefilled) -->
+        <form onsubmit="submitSplashPage(event)" class="mt-4 space-y-4">
+          <div>
+            <label for="splashFullName" class="block text-xs font-semibold text-slate-200 mb-1">
+              Participant Full Name
+            </label>
+            <input 
+              id="splashFullName" 
+              type="text" 
+              required 
+              placeholder="e.g. Abdullah Al-Harbi" 
+              value=""
+              class="w-full bg-aviation-950 border border-aviation-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-safety-500 transition-colors"
+            >
+            <p id="splashNameError" class="text-[11px] text-red-400 font-medium hidden mt-1">Please enter your full name.</p>
+          </div>
+
+          <div>
+            <label for="splashEmployeeId" class="block text-xs font-semibold text-slate-200 mb-1">
+              Employee ID
+            </label>
+            <input 
+              id="splashEmployeeId" 
+              type="text" 
+              required 
+              placeholder="e.g. KSIA-84920" 
+              value=""
+              class="w-full bg-aviation-950 border border-aviation-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm font-mono text-white placeholder-slate-500 focus:outline-none focus:border-safety-500 transition-colors"
+            >
+            <p id="splashIdError" class="text-[11px] text-red-400 font-medium hidden mt-1">Please enter your employee ID.</p>
+          </div>
+
+          <div>
+            <label for="splashAssessmentDate" class="block text-xs font-semibold text-slate-200 mb-1">
+              Date of Assessment
+            </label>
+            <input 
+              id="splashAssessmentDate" 
+              type="date" 
+              required 
+              class="w-full bg-aviation-950 border border-aviation-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-safety-500 transition-colors"
+            >
+          </div>
+
+          <div class="pt-2">
+            <button 
+              type="submit" 
+              class="w-full py-3.5 px-5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-safety-500 to-amber-500 hover:from-safety-400 hover:to-amber-400 active:scale-[0.98] text-slate-950 transition-all flex items-center justify-center gap-2 shadow-lg shadow-safety-500/25 cursor-pointer"
+            >
+              <span>Start Training & Assessment</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+
+          <p class="text-[10px] text-center text-slate-400">
+            Your name, ID, and assessment date will be officially recorded on your final report.
+          </p>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- 10-MINUTE TIME WARNING MODAL -->
+    <div id="timeWarningModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+      <div class="bg-aviation-900 border-2 border-safety-500 rounded-2xl max-w-md w-full p-6 shadow-2xl text-center">
+        <div class="w-14 h-14 rounded-2xl bg-safety-500/20 border border-safety-500/40 text-safety-500 flex items-center justify-center mx-auto mb-3">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Time Warning · تنبيه الوقت</h3>
+        <p class="text-sm font-semibold text-safety-500 mb-2">
+          Attention: 10 minutes remaining to complete the activity and test.
+        </p>
+        <p class="text-xs text-slate-300 font-arabic mb-5" dir="rtl">
+          تنبيه: متبقي 10 دقائق فقط لإكمال الأنشطة والاختبار.
+        </p>
+        <button onclick="dismissTimeWarning()" class="w-full py-2.5 px-4 bg-safety-500 hover:bg-safety-600 active:scale-[0.98] text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all">
+          Acknowledge & Continue
+        </button>
+      </div>
+    </div>
+
+    <!-- IN-APP NOTICE MODAL (Zero browser alert reliance) -->
+    <div id="customNoticeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+      <div class="bg-[#0B192C] border-2 border-aviation-700/80 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+        <div class="flex items-center gap-3">
+          <div id="noticeIconContainer" class="w-11 h-11 rounded-xl bg-safety-500/20 border border-safety-500/40 text-safety-500 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div>
+            <h3 id="noticeModalTitle" class="text-base font-bold text-white leading-tight">Notice</h3>
+            <p id="noticeModalSubtitle" class="text-[11px] text-slate-400">KSIA Emergency Response Team Training</p>
+          </div>
+        </div>
+        <p id="noticeModalMessage" class="text-xs text-slate-200 leading-relaxed"></p>
+        <div class="pt-2">
+          <button id="noticeModalBtn" onclick="closeNoticeModal()" class="w-full py-2.5 px-4 bg-safety-500 hover:bg-safety-400 text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+            Acknowledge
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- IN-APP CONFIRMATION MODAL (Zero browser confirm reliance) -->
+    <div id="customConfirmModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-4">
+      <div class="bg-[#0B192C] border-2 border-aviation-700/80 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+        <div class="flex items-center gap-3">
+          <div id="confirmIconContainer" class="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div>
+            <h3 id="confirmModalTitle" class="text-base font-bold text-white leading-tight">Please Confirm</h3>
+            <p class="text-[11px] text-slate-400">KSIA Emergency Response Team Training</p>
+          </div>
+        </div>
+        <p id="confirmModalMessage" class="text-xs text-slate-200 leading-relaxed"></p>
+        <div class="pt-2 flex items-center gap-2.5">
+          <button id="confirmCancelBtn" onclick="closeConfirmModal(false)" class="flex-1 py-2.5 px-4 bg-aviation-800 hover:bg-aviation-700 text-slate-300 font-semibold rounded-xl text-xs transition-colors cursor-pointer">
+            Cancel
+          </button>
+          <button id="confirmActionBtn" onclick="closeConfirmModal(true)" class="flex-1 py-2.5 px-4 bg-safety-500 hover:bg-safety-400 text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKY 10-MINUTE REMINDER BANNER -->
+    <div id="stickyWarningBanner" class="bg-safety-500/15 border-b border-safety-500/40 px-4 py-2 text-xs text-amber-300 font-medium hidden">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-safety-500 animate-ping"></span>
+          <span><strong>Notice:</strong> 10 minutes remaining to complete the activity and test.</span>
+        </div>
+        <span class="font-mono text-safety-400 font-bold tabular-nums" id="bannerTimerDisplay">10:00</span>
+      </div>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-5">
+
+      <!-- ========================================================================= -->
+      <!-- PHASE 1: INTERACTIVE LEARNING MODULE (5 ADMINISTRATIVE ERT ROLES)         -->
+      <!-- ========================================================================= -->
+      <section id="phaseLearning" class="space-y-5">
+        
+        <!-- Orientation Header -->
+        <div class="bg-aviation-900 border border-aviation-700/80 rounded-2xl p-5 shadow-lg">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <div class="text-[11px] font-bold text-safety-500 uppercase tracking-wider">
+                Administrative Offices ERT Training · مطار الملك سلمان الدولي
+              </div>
+              <h2 class="text-lg md:text-xl font-bold text-white mt-0.5">
+                Explore the 5 ERT Roles
+              </h2>
+              <p class="text-xs text-slate-300 mt-1 max-w-xl">
+                Review the core responsibilities for each role in our administrative building and complete the quick practical activity. Once all 5 roles are reviewed, proceed directly to the assessment.
+              </p>
+              <div class="arabic-content hidden mt-2 text-xs text-amber-200/90 font-arabic bg-aviation-950 p-2 rounded-lg border border-amber-500/20" dir="rtl">
+                تدريب فرق الاستجابة للطوارئ لموظفي المكاتب الإدارية بمطار الملك سلمان الدولي. استعرض الأدوار الخمسة وحل النشاط السريع لكل دور لفتح الاختبار.
+              </div>
+            </div>
+
+            <!-- Progress Tracker -->
+            <div class="shrink-0 bg-aviation-950 px-3.5 py-2.5 rounded-xl border border-aviation-800 text-center min-w-[130px]">
+              <div class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Progress</div>
+              <div class="text-base font-bold text-white tabular-nums" id="rolesProgressCount">0 / 5 Completed</div>
+              <div class="text-[10px] text-amber-400 font-medium" id="rolesProgressStatus">Complete all 5 roles</div>
+            </div>
+          </div>
+
+          <!-- 5 Role Selector Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-4 pt-4 border-t border-aviation-800" id="rolePillsNav">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Active Role Display Container -->
+        <div id="activeRoleCardContainer">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Bottom Action Bar (Proceed to Assessment) -->
+        <div class="p-3 bg-aviation-900/90 border border-aviation-800 rounded-xl flex items-center justify-between gap-3 shadow-md">
+          <div class="text-xs text-slate-300">
+            <span id="bottomSummaryText" class="font-medium">Complete all 5 roles to unlock the assessment.</span>
+          </div>
+          <button id="proceedToAssessmentBtn" onclick="switchPhase('assessment')" disabled class="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all disabled:opacity-40 disabled:cursor-not-allowed bg-safety-500 text-slate-950 hover:bg-safety-400 active:scale-[0.98] shadow-md shadow-safety-500/20 whitespace-nowrap">
+            Proceed to Assessment →
+          </button>
+        </div>
+
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- PHASE 2: ROLE SELECTION, QUIZ & RETAKES                                   -->
+      <!-- ========================================================================= -->
+      <section id="phaseAssessment" class="space-y-5 hidden">
+        
+        <!-- STEP 1 OF PHASE 2: CLEAN, SWIFT ROLE SELECTION -->
+        <div id="assessmentSelectionView" class="space-y-4">
+          <div id="roleSelectionHeaderContainer" class="bg-aviation-900 border border-aviation-700 rounded-2xl p-5 shadow-lg">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[10px] font-bold text-safety-500 uppercase tracking-wider">Step 1 of 2 · Primary Evaluation</span>
+              <span class="text-[11px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/30">0 / 2 Roles Completed</span>
+            </div>
+            <h2 class="text-base sm:text-lg md:text-xl font-bold text-white mt-1">
+              Select Your Primary ERT Role
+            </h2>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              Every participant must complete a minimum of two role assessment tests (6 multiple-choice questions each, 70% passing threshold).
+            </p>
+          </div>
+
+          <!-- Clean 5 Role Selection Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5" id="cleanRoleSelectionCards">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- STEP 2 OF PHASE 2: ACTIVE QUIZ VIEW -->
+        <div id="assessmentQuizView" class="space-y-4 hidden">
+          <!-- Quiz Top Strip -->
+          <div class="bg-aviation-900 border border-aviation-700 rounded-xl p-3.5 flex items-center justify-between gap-3 shadow-md">
+            <div class="flex items-center gap-2.5">
+              <button onclick="confirmExitQuiz()" class="p-1.5 rounded-lg bg-aviation-800 hover:bg-aviation-700 text-slate-300 transition-colors text-xs cursor-pointer" title="Return to Role Selection">
+                ← Back
+              </button>
+              <div>
+                <div class="text-[10px] font-bold text-safety-500 uppercase tracking-wider" id="quizRoleTag">TEAM LEADER</div>
+                <h3 class="text-sm font-bold text-white" id="quizRoleTitle">Evaluation Test</h3>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-slate-400">Question <strong class="text-white font-mono" id="quizCurrentQuestionNum">1</strong> of <span class="font-mono" id="quizTotalQuestionsNum">6</span></span>
+              <div class="w-16 bg-aviation-950 h-2 rounded-full overflow-hidden border border-aviation-800">
+                <div id="quizProgressBar" class="bg-safety-500 h-full w-1/6 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question Card -->
+          <div class="bg-aviation-900 border border-aviation-700 rounded-2xl p-4 sm:p-6 shadow-xl space-y-5">
+            <div>
+              <div class="text-[11px] font-bold text-safety-500 uppercase tracking-wider mb-1">Administrative Office Scenario</div>
+              <h4 id="quizQuestionText" class="text-sm md:text-base font-bold text-white leading-relaxed">
+                Loading question...
+              </h4>
+              <p id="quizQuestionArabic" class="arabic-content hidden text-xs text-amber-200/90 font-arabic mt-1.5" dir="rtl"></p>
+            </div>
+
+            <!-- Choices -->
+            <div class="space-y-2.5" id="quizChoicesContainer">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="pt-4 border-t border-aviation-800 flex items-center justify-between gap-3">
+              <button id="quizPrevBtn" onclick="navigateQuiz(-1)" class="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-aviation-800 hover:bg-aviation-700 text-slate-300 transition-colors disabled:opacity-30 disabled:pointer-events-none cursor-pointer">
+                ← Previous
+              </button>
+              <div class="flex items-center gap-2">
+                <button id="quizNextBtn" onclick="navigateQuiz(1)" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-safety-500 hover:bg-safety-400 text-slate-950 transition-all cursor-pointer">
+                  Next Question →
+                </button>
+                <button id="quizSubmitBtn" onclick="submitQuiz()" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all hidden cursor-pointer">
+                  Submit Assessment ✓
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 OF PHASE 2: IMMEDIATE RESULTS & FEEDBACK -->
+        <div id="assessmentResultsView" class="space-y-5 hidden">
+          <!-- Summary Box -->
+          <div id="resultsScoreCard" class="bg-aviation-900 border border-aviation-700/80 rounded-2xl p-5 md:p-6 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase font-semibold text-slate-400" id="resultRoleNameTag">TEAM LEADER EVALUATION</span>
+                <div class="flex items-center gap-3 mt-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-white" id="resultStatusHeadline">Test Completed</h3>
+                  <span id="resultPassBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider">PASSED</span>
+                </div>
+                <p class="text-xs text-slate-300 mt-1" id="resultSummaryMessage">
+                  Review your answers and administrative safety rationales below.
+                </p>
+              </div>
+
+              <!-- Score Indicator -->
+              <div class="bg-aviation-950 p-3.5 rounded-xl border border-aviation-800 text-center min-w-[120px] shrink-0">
+                <div class="text-2xl md:text-3xl font-mono font-bold tabular-nums" id="resultPercentageText">83%</div>
+                <div class="text-[10px] font-semibold text-slate-400 uppercase mt-0.5" id="resultCorrectFraction">5 / 6 Correct</div>
+                <div class="text-[10px] text-slate-400 mt-1">Passing: <strong>70%</strong></div>
+              </div>
+            </div>
+
+            <!-- Progress Notice Box (Dynamic: Shows 1/2 complete or 2/2 completed) -->
+            <div id="resultsProgressNoticeContainer"></div>
+
+            <!-- Action Buttons Container (Dynamic based on minimum 2 roles completion) -->
+            <div id="resultsActionButtonsContainer" class="mt-4 pt-3 border-t border-aviation-800">
+              <!-- Rendered dynamically by renderQuizResults -->
+            </div>
+          </div>
+
+          <!-- Question-by-Question Guidance -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">
+              Question Guidance & Correct Responses
+            </h4>
+            <div id="resultsQuestionsList" class="space-y-2.5">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================================================= -->
+      <!-- PHASE 3: FINAL DOWNLOADABLE PERFORMANCE REPORT                            -->
+      <!-- ========================================================================= -->
+      <section id="phaseReport" class="space-y-5 hidden">
+        
+        <!-- Header Banner -->
+        <div class="bg-aviation-900 border border-aviation-700 rounded-2xl p-5 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-safety-500 font-bold">
+              KING SALMAN INTERNATIONAL AIRPORT
+            </div>
+            <h2 class="text-lg md:text-xl font-bold text-white mt-0.5">
+              Performance Report
+            </h2>
+            <p class="text-xs text-slate-300 mt-1">
+              Summary of emergency response team competency evaluations, attempt history, strengths, and areas to review.
+            </p>
+          </div>
+
+          <!-- Download & Print Actions -->
+          <div class="shrink-0 flex flex-wrap items-center gap-2">
+            <button onclick="handleDownloadReportWithBleep()" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-safety-500 hover:bg-safety-400 text-slate-950 transition-all flex items-center gap-1.5 shadow-md shadow-safety-500/20 cursor-pointer">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Download PDF</span>
+            </button>
+            <button onclick="handleNativePrintReport()" class="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-aviation-800 hover:bg-aviation-700 text-slate-200 border border-aviation-700 transition-colors flex items-center gap-1.5 cursor-pointer" title="Print or save as PDF via your browser">
+              <svg class="w-4 h-4 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+              </svg>
+              <span>Print / Save</span>
+            </button>
+            <button onclick="switchPhase('assessment')" class="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-aviation-800 hover:bg-aviation-700 text-slate-200 border border-aviation-700 transition-colors flex items-center gap-1.5 cursor-pointer">
+              <span>← Back to Assessment</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- On-Screen Performance Report Card -->
+        <div class="bg-aviation-950 border border-aviation-800 rounded-2xl p-5 md:p-6 shadow-xl space-y-5">
+          
+          <!-- Report Header -->
+          <div class="border-b border-aviation-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="text-sm font-bold text-white">KING SALMAN INTERNATIONAL AIRPORT</h3>
+              <p class="text-xs text-slate-400">Emergency Response Team (ERT) · Performance Report</p>
+            </div>
+            <div class="text-left sm:text-right">
+              <span id="reportOverallBadge" class="inline-block px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-aviation-800 text-slate-300 border border-aviation-700">
+                STATUS: PENDING
+              </span>
+              <p class="text-[10px] text-slate-400 mt-0.5" id="reportGeneratedDate">Date: 2026-10-09</p>
+            </div>
+          </div>
+
+          <!-- Participant Metadata Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-aviation-900/60 p-3.5 rounded-xl border border-aviation-800 text-xs">
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Participant Name</span>
+              <strong class="text-white text-xs" id="reportNameDisplay">Eng. Abdullah Al-Harbi</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Employee ID</span>
+              <strong class="text-white font-mono text-xs" id="reportIdDisplay">KSIA-ADM-84920</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Role(s) Assessed</span>
+              <strong class="text-white text-xs truncate block" id="reportRolesAssessedDisplay">None Yet</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Total Time Taken</span>
+              <strong class="text-safety-400 font-mono text-xs" id="reportTimeElapsedDisplay">12m 30s / 25m</strong>
+            </div>
+          </div>
+
+          <!-- Evaluation History Table -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">
+              Test Attempt History
+            </h4>
+            <div class="overflow-x-auto rounded-xl border border-aviation-800">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-aviation-900 text-slate-400 uppercase text-[10px] border-b border-aviation-800 font-semibold">
+                  <tr>
+                    <th class="px-4 py-2.5">ERT Role</th>
+                    <th class="px-3 py-2.5 text-center">Attempts</th>
+                    <th class="px-3 py-2.5 text-center">Highest Score</th>
+                    <th class="px-3 py-2.5 text-center">Passing Threshold</th>
+                    <th class="px-4 py-2.5 text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="reportTableBody" class="divide-y divide-aviation-800/80 font-medium">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Strengths & Areas to Review -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            <div class="bg-aviation-900/40 p-3.5 rounded-xl border border-emerald-500/20">
+              <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
+                ✓ Key Strengths Identified
+              </div>
+              <ul id="reportStrengthsList" class="space-y-1.5 text-xs text-slate-300">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+
+            <div class="bg-aviation-900/40 p-3.5 rounded-xl border border-amber-500/20">
+              <div class="text-xs font-bold text-safety-400 uppercase tracking-wider mb-2">
+                ▲ Areas to Review (Actionable Feedback)
+              </div>
+              <ul id="reportAreasList" class="space-y-1.5 text-xs text-slate-300">
+                <!-- Populated dynamically -->
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto border-t border-aviation-800/80 bg-aviation-950 px-4 py-3 text-center text-xs text-slate-400">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
+        <div>King Salman International Airport · Administrative Personnel ERT Training</div>
+        <div class="text-[11px] text-slate-400">Max Duration: 25 Minutes · Standalone Application</div>
+      </div>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- VANILLA JAVASCRIPT STATE ENGINE & INTERACTIVE LOGIC                       -->
+    <!-- ========================================================================= -->
+    <script>
+      /**
+       * KING SALMAN INTERNATIONAL AIRPORT (KSIA)
+       * ADMINISTRATIVE OFFICES EMERGENCY RESPONSE TEAM (ERT) ROLES
+       */
+
+      // 1. THE 5 EXACT ERT ROLES WITH OFFICIAL ROLES & ACCURATE DEFINITIONS
+      const ERT_ROLES_DATA = [
+        {
+          id: 0,
+          key: 'leader',
+          name: 'Team Leader',
+          nameAr: 'قائد الفريق',
+          officialDefinition: 'The Team Leader functions as the central coordinator of the Emergency Response Team, bearing sole responsibility for incident assessment and resource coordination.',
+          officialDefinitionAr: 'يعمل قائد الفريق كمنسق مركزي لفريق الاستجابة للطوارئ، ويتحمل المسؤولية الحصرية عن تقييم الحادث وتنسيق الموارد.',
+          officeContext: 'In our administrative offices, when an alert sounds, the Team Leader maintains order, evaluates the alarm origin on the administrative floor panel, verifies whether immediate hazard exists before disrupting office operations, coordinates internal office squads, and oversees the situation until external emergency command arrives.',
+          officeContextAr: 'في المكاتب الإدارية، يقوم قائد الفريق بالحفاظ على الهدوء، وتقييم لوحة الإنذار، والتحقق من صحة البلاغ وتنسيق الفرق الداخلية حتى تسليم القيادة للدفاع المدني.',
+          keyResponsibilities: [
+            { icon: '📋', text: 'Central coordinator of the Emergency Response Team; sole responsibility for incident assessment and resource coordination.', ar: 'المنسق المركزي لفرق الاستجابة وصاحب المسؤولية الحصرية عن تقييم الحادث وتنسيق الموارد.' },
+            { icon: '🏢', text: 'Rapid size-up of administrative building hazards and establishing a safe floor assembly coordination point.', ar: 'التقييم السريع للمخاطر في المبنى الإداري وتحديد نقطة تنسيق آمنة.' },
+            { icon: '📞', text: 'Maintaining continuous communication with Airport Operations Center (AOC) and administrative management.', ar: 'الحفاظ على اتصال مستمر مع مركز عمليات المطار (AOC) وإدارة المرافق.' },
+            { icon: '🤝', text: 'Authorizing tactical command transfer to incoming Saudi Civil Defense upon arrival.', ar: 'تسليم القيادة الميدانية لضباط الدفاع المدني السعودي فور وصولهم.' }
+          ],
+          activity: {
+            title: 'Administrative Office Decision',
+            titleAr: 'سيناريو اتخاذ القرار في المكاتب الإدارية',
+            prompt: 'An unexpected smoke alarm sounds on Administrative Floor 3 near the records archive room. As Team Leader, what is your first responsibility?',
+            promptAr: 'انطلق إنذار دخان مفاجئ في الطابق الإداري الثالث بالقرب من غرفة الأرشيف. بصفتك قائد الفريق، ما هو الإجراء الصحيح؟',
+            options: [
+              {
+                text: 'Order the entire building staff to stampede out immediately before checking anything.',
+                isCorrect: false,
+                feedback: 'Incorrect. Unverified panic can cause crowd falls and disruption. The Team Leader assesses the incident systematically first.'
+              },
+              {
+                text: 'Coordinate immediate verification at the floor panel, dispatch Suppression for safe size-up, and notify AOC.',
+                isCorrect: true,
+                feedback: 'Correct! The Team Leader functions as the central coordinator, assessing the incident and dispatching resources calmly.'
+              },
+              {
+                text: 'Silence the alarm and tell employees to stay at their desks without checking.',
+                isCorrect: false,
+                feedback: 'Incorrect. Every alarm must be actively assessed for employee safety.'
+              }
+            ]
+          }
+        },
+        {
+          id: 1,
+          key: 'suppression',
+          name: 'Suppression',
+          nameAr: 'المكافحة والاحتواء الأولي',
+          officialDefinition: 'The Suppression role evaluates early-stage fire and thermal anomalies within the facilities and executes rapid containment if conditions permit.',
+          officialDefinitionAr: 'يقوم دور المكافحة بتقييم الحرائق والظواهر الحرارية في مراحلها المبكرة داخل المرافق وتنفيذ الاحتواء السريع إذا سمحت الظروف بذلك بأمان.',
+          officeContext: 'In administrative offices, the Suppression role addresses early-stage thermal events such as smoking power strips, office paper shredder fires, or server room battery hotspots. If conditions permit safely, they execute containment using clean agent or CO2 extinguishers. If smoke fills the room or reaches the ceiling, they immediately withdraw and shut doors.',
+          officeContextAr: 'في المكاتب الإدارية، يتعامل دور المكافحة مع بدايات الشرر كالتوصيلات الكهربائية أو سلات المهملات باستخدام الطفايات المناسبة والانسحاب فوراً إذا تصاعد الخطر.',
+          keyResponsibilities: [
+            { icon: '🔍', text: 'Evaluates early-stage fire and thermal anomalies within facilities and executes rapid containment if conditions permit.', ar: 'تقييم الحرائق والظواهر الحرارية في مراحلها المبكرة وتنفيذ الاحتواء السريع إذا سمحت الظروف.' },
+            { icon: '🧯', text: 'Selects the proper extinguisher: Clean Agent/CO2 for administrative computers/servers, never water on energized electronics.', ar: 'اختيار الطفاية المناسبة: ثاني أكسيد الكربون أو الغاز النظيف للأجهزة الكهربائية، وحظر الماء تماماً.' },
+            { icon: '🎯', text: 'Applies the P.A.S.S. technique: Pull pin, Aim at base of fire, Squeeze lever, Sweep side-to-side.', ar: 'تطبيق تقنية PASS: اسحب مسمار الأمان، وجّه للقاعدة، اضغط المقبض، وحرّك يميناً ويساراً.' },
+            { icon: '🚪', text: 'Safe withdrawal rule: If fire exceeds incipient stage or smoke reaches ceiling, withdraw immediately and seal doors.', ar: 'الانسحاب الآمن: إذا تجاوز الحريق حجمه الأولي أو لامس الدخان السقف، اخرج فوراً وأغلق الباب.' }
+          ],
+          activity: {
+            title: 'Office Electrical Hotspot Scenario',
+            titleAr: 'سيناريو شرر كهربائي في المكتب',
+            prompt: 'An administrative desktop workstation and surge protector begin sparking with localized smoldering smoke. What does the Suppression role do?',
+            promptAr: 'بدأت توصيلة كهربائية لمكتب إداري بإصدار شرر ودخان خفيف. ما الإجراء السليم لدور المكافحة؟',
+            options: [
+              {
+                text: 'Throw a bucket of tap water onto the electrical power strip.',
+                isCorrect: false,
+                feedback: 'Incorrect and dangerous. Water conducts electricity, causing electrocution risk on energized office equipment.'
+              },
+              {
+                text: 'Deploy an office CO2 or Clean Agent extinguisher aiming at the base, isolate the power plug if safe, and withdraw.',
+                isCorrect: true,
+                feedback: 'Correct! Evaluates early-stage thermal anomaly and rapidly contains it with an electrically safe extinguisher.'
+              },
+              {
+                text: 'Open all office windows and leave the power strip sparking.',
+                isCorrect: false,
+                feedback: 'Incorrect. Wind feeds oxygen to fire and leaves hazard unaddressed.'
+              }
+            ]
+          }
+        },
+        {
+          id: 2,
+          key: 'casualty',
+          name: 'Casualty Care',
+          nameAr: 'الرعاية الطبية والإسعاف',
+          officialDefinition: 'The Casualty Care role provides immediate life support and medical stabilization for victims of trauma, electrical shock, or sudden cardiac arrest.',
+          officialDefinitionAr: 'يقدم دور الرعاية الطبية دعم الحياة الفوري والتثبيت الطبي لضحايا الإصابات أو الصدمات الكهربائية أو التوقف المفاجئ للقلب.',
+          officeContext: 'In administrative offices, medical emergencies include sudden cardiac arrest, severe cuts from broken glass, or electrical shock. The Casualty Care role immediately retrieves the wall-mounted Automated External Defibrillator (AED), provides chest compressions (100–120 bpm), controls severe bleeding, and stabilizes victims until paramedics arrive.',
+          officeContextAr: 'في المكاتب الإدارية، يشمل ذلك حالات الإغماء والنزيف أو توقف القلب. يقوم الدور بإحضار جهاز الصدمات (AED) والضغط الصدري وتثبيت المصاب حتى وصول المسعفين.',
+          keyResponsibilities: [
+            { icon: '💓', text: 'Provides immediate life support and medical stabilization for victims of trauma, electrical shock, or sudden cardiac arrest.', ar: 'تقديم دعم الحياة الفوري والتثبيت الطبي لضحايا الإصابات أو الصدمات الكهربائية أو توقف القلب.' },
+            { icon: '⚡', text: 'Deploys office Automated External Defibrillators (AED) within 3 minutes of cardiac collapse.', ar: 'إحضار وتوصيل جهاز الصدمات الآلي (AED) خلال 3 دقائق من سقوط المصاب.' },
+            { icon: '👐', text: 'Performs continuous CPR chest compressions (100–120 compressions/min, 5 cm depth) until paramedics arrive.', ar: 'الضغط الصدري المستمر بمعدل 100-120 ضغطة/دقيقة لإنقاذ الدماغ.' },
+            { icon: '🩸', text: 'Applies direct pressure and pressure dressings to control traumatic bleeding.', ar: 'الضغط المباشر والضمادات للسيطرة على النزيف الحاد.' }
+          ],
+          activity: {
+            title: 'Administrative Staff Collapse Scenario',
+            titleAr: 'سيناريو سقوط مفاجئ لزميل في المكتب',
+            prompt: 'An administrative employee collapses in the office hallway, unresponsive with no pulse. What does the Casualty Care role execute immediately?',
+            promptAr: 'سقط موظف في ممر المكاتب الإدارية فاقداً للوعي ودون نبض. ما الإجراء الفوري لدور الرعاية والإسعاف؟',
+            options: [
+              {
+                text: 'Give the unresponsive colleague a glass of water and wait 20 minutes.',
+                isCorrect: false,
+                feedback: 'Incorrect and dangerous. Never give liquids to an unresponsive person; it blocks the airway.'
+              },
+              {
+                text: 'Direct a colleague to bring the nearest hallway AED, call emergency dispatch, and begin high-quality chest compressions immediately.',
+                isCorrect: true,
+                feedback: 'Correct! Provides immediate life support and medical stabilization with CPR and early AED deployment.'
+              },
+              {
+                text: 'Leave the employee unattended to search for their employee badge.',
+                isCorrect: false,
+                feedback: 'Incorrect. Immediate resuscitation cannot be delayed.'
+              }
+            ]
+          }
+        },
+        {
+          id: 3,
+          key: 'evacuation',
+          name: 'Evacuation Support',
+          nameAr: 'دعم وتوجيه الإخلاء',
+          officialDefinition: 'The Evacuation Support executes the safe, orderly displacement of occupants from unsafe zones toward designated external assembly points.',
+          officialDefinitionAr: 'ينفذ دور دعم الإخلاء النقل الآمن والمنظم لشاغلي المبنى من المناطق غير الآمنة نحو نقاط التجمع الخارجية المحددة.',
+          officeContext: 'In administrative offices, when an evacuation alarm sounds, administrative staff often hesitate or try to gather laptops, chargers, and bags. Evacuation Support firmly directs staff to leave all belongings, sweeps conference rooms and restrooms, strictly prohibits elevator use, and accounts for personnel at the external Safe Assembly Point.',
+          officeContextAr: 'في المكاتب الإدارية، يقوم هذا الدور بتوجيه الموظفين بصرامة لترك أجهزة الكمبيوتر المحمولة والمتعلقات، ومنع استخدام المصاعد، وتمشيط المكاتب ودورات المياه، والتجمع بنقاط التجمع الآمنة.',
+          keyResponsibilities: [
+            { icon: '🏃', text: 'Executes the safe, orderly displacement of occupants from unsafe zones toward designated external assembly points.', ar: 'تنفيذ النقل الآمن والمنظم لشاغلي المبنى من المناطق غير الآمنة نحو نقاط التجمع الخارجية.' },
+            { icon: '🚫', text: 'Strictly enforces the elevator ban during fire alarms; guides staff down designated fire-rated stairwells.', ar: 'منع استخدام المصاعد نهائياً وتوجيه الجميع عبر السلالم المخصصة للطوارئ.' },
+            { icon: '💼', text: 'Directs occupants to leave personal laptops and bags behind to prevent stairwell congestion.', ar: 'إلزام الموظفين بترك الأجهزة والمتعلقات لتجنب التدافع وازدحام المخارج.' },
+            { icon: '🚻', text: 'Performs systematic sweeps of office suites, meeting rooms, and restrooms to confirm zero trapped staff.', ar: 'تمشيط المكاتب وقاعات الاجتماعات ودورات المياه للتأكد من خلوها تماماً.' }
+          ],
+          activity: {
+            title: 'Administrative Office Floor Evacuation',
+            titleAr: 'سيناريو إخلاء الطابق الإداري',
+            prompt: 'During an office building alarm, two administrative staff attempt to pack their laptop bags while three others head toward the passenger elevator. How does Evacuation Support act?',
+            promptAr: 'أثناء الإنذار، يحاول موظفان جمع حقائب الحواسيب بينما يتجه آخرون نحو المصعد. كيف يتصرف دعم الإخلاء؟',
+            options: [
+              {
+                text: 'Allow them to pack their bags and ride the elevator down to save time.',
+                isCorrect: false,
+                feedback: 'Incorrect and lethal. Elevators can fail and trap staff in smoke; packing wastes vital seconds.'
+              },
+              {
+                text: 'Firmly direct staff to leave laptops behind, block the elevator, and guide everyone down the fire-rated stairs to the Assembly Point.',
+                isCorrect: true,
+                feedback: 'Correct! Executes safe, orderly displacement toward designated external assembly points.'
+              },
+              {
+                text: 'Run outside alone without alerting or directing anyone in the office.',
+                isCorrect: false,
+                feedback: 'Incorrect. Evacuation Support is responsible for sweeping and guiding occupants.'
+              }
+            ]
+          }
+        },
+        {
+          id: 4,
+          key: 'liaison',
+          name: 'Liaison and External Agency Interface',
+          nameAr: 'الاتصال والتنسيق مع الجهات الخارجية',
+          officialDefinition: 'The Liaison role serves as the single authorized interface between the internal Emergency Response Team and incoming external emergency services, such as Saudi Civil Defense and Crescent Moon.',
+          officialDefinitionAr: 'يعمل دور الاتصال كنقطة اتصال رسمية وحيدة معتمدة بين فريق الطوارئ الداخلي والخدمات الخارجية المساندة، مثل الدفاع المدني السعودي والهلال الأحمر.',
+          officeContext: 'When an emergency occurs at the administrative complex, incoming Saudi Civil Defense fire engines and Red Crescent ambulances must access security gates rapidly and navigate to the exact building entrance. The Liaison stages at the designated Access Gate, coordinates instant security clearance, hands over the floor layout blueprint, and relays operational status.',
+          officeContextAr: 'عند حدوث طارئ بالمبنى الإداري، يتمركز ضابط الاتصال عند البوابة المحددة، ويسهل دخول آليات الدفاع المدني والهلال الأحمر، ويسلم مخطط الطوابق ومعلومات المحتجزين.',
+          keyResponsibilities: [
+            { icon: '🤝', text: 'Serves as the single authorized interface between internal ERT and external emergency services (Saudi Civil Defense and Crescent Moon).', ar: 'نقطة الاتصال الرسمية المعتمدة الوحيدة بين فريق الطوارئ والجهات الخارجية المساندة (الدفاع المدني والهلال الأحمر).' },
+            { icon: '🚧', text: 'Stages at designated emergency access gates to expedite security clearance for incoming apparatus.', ar: 'التمركز عند بوابات الدخول لتسريع العبور الأمني لمركبات الطوارئ دون تأخير.' },
+            { icon: '🗺️', text: 'Provides incoming commanders with tactical administrative blueprints, hazard details, and trapped person reports.', ar: 'تزويد القادة الميدانيين بمخططات المبنى الإداري ومواقع المخاطر وحالة الأشخاص.' },
+            { icon: '🎙️', text: 'Protects operational communication integrity; directs all media inquiries to the official airport spokesperson.', ar: 'حماية سرية الاتصالات وتوجيه أي استفسارات إعلامية للمتحدث الرسمي فقط.' }
+          ],
+          activity: {
+            title: 'External Emergency Services Arrival Scenario',
+            titleAr: 'سيناريو وصول آليات الدفاع المدني',
+            prompt: 'Saudi Civil Defense engines arrive at the administrative complex gate for a reported electrical fire on Floor 3. What does the Liaison role execute?',
+            promptAr: 'وصلت آليات الدفاع المدني للبوابة لمباشرة حريق بالطابق 3. ما الإجراء الفوري لدور الاتصال والتنسيق؟',
+            options: [
+              {
+                text: 'Demand that the fire trucks wait outside until normal visitor badges are printed.',
+                isCorrect: false,
+                feedback: 'Incorrect. Emergency access must be instantaneous.'
+              },
+              {
+                text: 'Expedite gate security clearance, deliver the floor blueprint and hazard briefing to the commander, and guide them directly to the scene.',
+                isCorrect: true,
+                feedback: 'Correct! Serves as the single authorized interface between internal ERT and external emergency services.'
+              },
+              {
+                text: 'Leave the gate unattended and give an unauthorized interview to bystander cameras.',
+                isCorrect: false,
+                feedback: 'Incorrect. Media inquiries must be handled by the official spokesperson, and the Liaison must remain at post.'
+              }
+            ]
+          }
+        }
+      ];
+
+      // 2. QUESTION BANK: BALANCED, PLAUSIBLE CHOICES FOR ADMINISTRATIVE PERSONNEL
+      const QUIZ_BANK = {
+        leader: [
+          {
+            q: "Who bears sole responsibility for incident assessment and resource coordination in the internal Emergency Response Team?",
+            qAr: "من يتحمل المسؤولية الحصرية عن تقييم الحادث وتنسيق الموارد في فريق الاستجابة للطوارئ الداخلي؟",
+            options: [
+              "The Emergency Response Team Leader",
+              "The administrative building facility manager",
+              "The designated floor evacuation safety warden",
+              "The senior airport duty security coordinator"
+            ],
+            correct: 0,
+            rationale: "The Team Leader functions as the central coordinator of the Emergency Response Team, bearing sole responsibility for incident assessment and resource coordination."
+          },
+          {
+            q: "When an unverified alarm triggers in an administrative office wing, what is the Team Leader's initial responsibility?",
+            qAr: "عند انطلاق إنذار غير مؤكد في جناح المكاتب الإدارية، ما هو الإجراء المبدئي لقائد الفريق؟",
+            options: [
+              "Order an immediate complex-wide evacuation before checking the source",
+              "Assess the floor alarm panel, deploy Suppression, and coordinate response",
+              "Request security guards to inspect individual offices before notifying AOC",
+              "Silence the floor alarm horns while waiting for secondary sensor confirmation"
+            ],
+            correct: 1,
+            rationale: "Rapid size-up and panel assessment allow verified decision-making without inducing unnecessary crowd panic."
+          },
+          {
+            q: "Where should the Team Leader establish the administrative incident coordination post?",
+            qAr: "أين يجب على قائد الفريق تأسيس مركز تنسيق الحادث الإداري؟",
+            options: [
+              "Directly in front of the active fire alarm panel on the incident floor",
+              "In a safe, smoke-free location with clear communication lines to AOC",
+              "At the primary administrative reception counter inside the ground lobby",
+              "At the external employee safe assembly point alongside evacuated staff"
+            ],
+            correct: 1,
+            rationale: "A safe, accessible, smoke-free coordination point ensures the leader can maintain active communication."
+          },
+          {
+            q: "If an administrative office fire escalates beyond incipient containment, what must the Team Leader do?",
+            qAr: "إذا تصاعد حريق بالمكاتب وتجاوز مرحلة الاحتواء الأولي، ما هو قرار قائد الفريق؟",
+            options: [
+              "Authorize trained office volunteers to enter with backup extinguishers",
+              "Order team withdrawal and transfer tactical command to Civil Defense",
+              "Direct internal teams to deploy indoor fire hose reels from the stairwells",
+              "Instruct floor wardens to seal corridor doors and await smoke dispersal"
+            ],
+            correct: 1,
+            rationale: "Life safety is the priority; the Team Leader withdraws internal teams and transfers lead command to incoming Saudi Civil Defense."
+          },
+          {
+            q: "What is the primary role of the Team Leader regarding incoming external emergency services?",
+            qAr: "ما هو دور قائد الفريق عند وصول فرق الطوارئ الخارجية؟",
+            options: [
+              "Maintain joint command and direct Civil Defense hose operations inside",
+              "Provide a clear situational debrief and formally transfer incident command",
+              "Accompany the lead fire captain into burning offices to identify assets",
+              "Relocate immediately to the airport operations center to handle media"
+            ],
+            correct: 1,
+            rationale: "The Team Leader formally briefs and transfers lead operational command to external emergency services."
+          },
+          {
+            q: "What record should be compiled following an emergency response in the administrative building?",
+            qAr: "ما هو السجل الذي يجب توثيقه بعد انتهاء التعامل مع الطارئ في المبنى الإداري؟",
+            options: [
+              "An official Incident Response Log detailing timelines and actions taken",
+              "A comprehensive structural damage estimate for the facilities department",
+              "An employee attendance verification sheet reconciling electronic badges",
+              "A routine equipment maintenance request prioritizing replaced hardware"
+            ],
+            correct: 0,
+            rationale: "Official incident logs provide accurate operational and safety auditing for KSIA safety management."
+          }
+        ],
+        suppression: [
+          {
+            q: "What is the primary operational mandate of the Suppression role in administrative facilities?",
+            qAr: "ما هو الواجب العملياتي الأساسي لدور المكافحة في المرافق الإدارية؟",
+            options: [
+              "Operating building standpipe valves and managing structural sprinkler systems",
+              "Evaluating early-stage anomalies and executing rapid containment if safe",
+              "Conducting systematic office sweeps and guiding staff toward exit doors",
+              "Isolating building primary electrical substations before alarms trigger"
+            ],
+            correct: 1,
+            rationale: "The Suppression role evaluates early-stage fire and thermal anomalies within facilities and executes rapid containment if conditions permit."
+          },
+          {
+            q: "Which type of fire extinguisher is strictly prohibited on energized office computers, servers, and power strips?",
+            qAr: "ما نوع طفاية الحريق المحظور تماماً استخدامه على أجهزة الكمبيوتر والخوادم الكهربائية الحية؟",
+            options: [
+              "Carbon Dioxide gas extinguisher (CO2)",
+              "Clean Agent gaseous extinguisher",
+              "Pressurized stored-water extinguisher",
+              "Multi-purpose dry chemical extinguisher"
+            ],
+            correct: 2,
+            rationale: "Water is electrically conductive and presents a fatal shock hazard to the operator on energized office electronics."
+          },
+          {
+            q: "What does the standardized acronym P.A.S.S. stand for when operating an office fire extinguisher?",
+            qAr: "ماذا يعني الاختصار P.A.S.S عند تشغيل طفاية الحريق في المكتب؟",
+            options: [
+              "Position extinguisher, Aim at middle flame, Squeeze handle, Stop discharge",
+              "Pull the pin, Aim at base of fire, Squeeze lever, Sweep side-to-side",
+              "Press safety release, Alert office team, Spray fire base, Step back slowly",
+              "Point nozzle, Assess flame spread, Squeeze trigger, Secure room perimeter"
+            ],
+            correct: 1,
+            rationale: "Pull, Aim, Squeeze, Sweep (P.A.S.S.) is the standardized method for portable extinguisher deployment."
+          },
+          {
+            q: "When must the Suppression role immediately withdraw from an office room?",
+            qAr: "متى يجب على دور المكافحة الانسحاب الفوري من غرفة المكتب؟",
+            options: [
+              "When the extinguisher pressure gauge needle moves toward the yellow zone",
+              "If smoke hits the ceiling or fire expands beyond incipient control",
+              "Once building fire alarm sounders transition to intermittent chime mode",
+              "When adjacent office emergency exit signs illuminate under battery power"
+            ],
+            correct: 1,
+            rationale: "Ceiling smoke indicates imminent flashover and lethal toxic gas buildup; immediate withdrawal is mandatory."
+          },
+          {
+            q: "What action should the Suppression member take with office doors when safely withdrawing from a smoke-filled room?",
+            qAr: "ما الإجراء الذي يتخذه عضو المكافحة مع أبواب المكتب عند الانسحاب الآمن من غرفة ممتلئة بالدخان؟",
+            options: [
+              "Leave doors open to allow natural ventilation and reduce smoke pressure",
+              "Close doors firmly to isolate smoke and deprive the fire of fresh air",
+              "Lock the doors securely with keys to prevent employees from entering",
+              "Prop doors slightly ajar with wedges so arriving fire crews find heat"
+            ],
+            correct: 1,
+            rationale: "Closing doors isolates smoke and heat, keeping egress corridors clear for evacuating staff."
+          },
+          {
+            q: "After successfully extinguishing a minor office wastebasket paper fire, what is the next step?",
+            qAr: "بعد إخماد حريق صغير لسلة مهملات ورقية بنجاح، ما هي الخطوة التالية؟",
+            options: [
+              "Inspect for smoldering embers, verify cooling, and report to Command",
+              "Immediately dispose of the charred contents in the central trash chute",
+              "Switch off primary circuit breakers across the entire office corridor",
+              "Procure a replacement extinguisher from another wing before notifying"
+            ],
+            correct: 0,
+            rationale: "Verifying thermal cooling prevents re-ignition, and reporting ensures administrative safety tracking."
+          }
+        ],
+        casualty: [
+          {
+            q: "What is the primary definition and responsibility of the Casualty Care role?",
+            qAr: "ما هو التعريف والمسؤولية الأساسية لدور الرعاية الطبية والإسعاف؟",
+            options: [
+              "Administering prescription medication and managing employee sick leave files",
+              "Providing immediate life support and stabilization for sudden medical trauma",
+              "Conducting annual health screenings and ordering routine first-aid supplies",
+              "Authorizing occupational health compensation claims for workplace accidents"
+            ],
+            correct: 1,
+            rationale: "The Casualty Care role provides immediate life support and medical stabilization for victims of trauma, electrical shock, or sudden cardiac arrest."
+          },
+          {
+            q: "What is the target timeframe to retrieve and apply an office Automated External Defibrillator (AED) to a collapsed victim?",
+            qAr: "ما هو الوقت المستهدف لإحضار وتوصيل جهاز الصدمات (AED) لمصاب بتوقف القلب في المبنى؟",
+            options: [
+              "Within 3 minutes of collapse",
+              "Within 6 to 8 minutes of collapse",
+              "Only after 5 continuous cycles of CPR",
+              "After municipal paramedics arrive on site"
+            ],
+            correct: 0,
+            rationale: "Mortality rises by roughly 7-10% every minute defibrillation is delayed; deployment within 3 minutes is vital."
+          },
+          {
+            q: "What is the recommended CPR compression rate for adult resuscitation according to Saudi Red Crescent standards?",
+            qAr: "ما هو معدل الضغطات الصدرية الموصى به للإنعاش القلبي وفقاً لمعايير الهلال الأحمر السعودي؟",
+            options: [
+              "80 to 100 compressions per minute at 3 cm depth",
+              "100 to 120 compressions per minute at 5 cm depth",
+              "120 to 140 compressions per minute at 7 cm depth",
+              "60 to 80 compressions per minute at 4 cm depth"
+            ],
+            correct: 1,
+            rationale: "100–120 compressions per minute at a depth of 5 cm maintains vital blood flow to the brain and heart."
+          },
+          {
+            q: "If an administrative colleague suffers severe arterial bleeding from broken office glass, what is the first-line intervention?",
+            qAr: "إذا أصيب موظف بنزيف شرياني حاد بسبب زجاج مكسور، ما هو الإجراء الإسعافي الأول؟",
+            options: [
+              "Apply direct firm pressure with clean dressing or approved tourniquet",
+              "Elevate the limb above heart level and apply cold packs without pressure",
+              "Thoroughly rinse the wound with antiseptic solution before dressing it",
+              "Wrap with loose gauze and wait for arriving paramedics to apply pressure"
+            ],
+            correct: 0,
+            rationale: "Direct firm pressure and rapid tourniquet application prevent life-threatening hemorrhagic shock."
+          },
+          {
+            q: "If an unresponsive colleague is breathing normally and has a pulse, which position should they be placed in?",
+            qAr: "إذا كان الزميل فاقداً للوعي ولكنه يتنفس بشكل طبيعي ولديه نبض، في أي وضع يوضع؟",
+            options: [
+              "Flat on back with legs elevated 30 cm on an office chair to treat shock",
+              "Recovery position on side to maintain an open and unobstructed airway",
+              "Seated upright in an office chair with the head tilted slightly forward",
+              "Prone position flat on stomach with hands placed beneath the forehead"
+            ],
+            correct: 1,
+            rationale: "The recovery position keeps the airway open and prevents aspiration of vomit or fluids."
+          },
+          {
+            q: "Upon arrival of Crescent Moon (Saudi Red Crescent) paramedics, what must the Casualty Care role provide?",
+            qAr: "عند وصول مسعفي الهلال الأحمر، ما الذي يجب أن يقدمه دور الرعاية الطبية والإسعاف؟",
+            options: [
+              "A structured clinical handover of patient vitals and actions delivered",
+              "A signed administrative liability waiver releasing airport authorities",
+              "An employee human resources record including past medical leave files",
+              "A security authorization permit approving emergency access to the room"
+            ],
+            correct: 0,
+            rationale: "A structured handover ensures seamless clinical continuity for the arriving medical team."
+          }
+        ],
+        evacuation: [
+          {
+            q: "What is the primary mandate of the Evacuation Support role?",
+            qAr: "ما هو الواجب الأساسي لدور دعم وتوجيه الإخلاء؟",
+            options: [
+              "Executing safe, orderly displacement toward external assembly points",
+              "Inspecting building structural columns and evaluating alarm circuits",
+              "Guarding ground-floor reception turnstiles to restrict public access",
+              "Operating emergency ventilation fans from the central control center"
+            ],
+            correct: 0,
+            rationale: "The Evacuation Support executes the safe, orderly displacement of occupants from unsafe zones toward designated external assembly points."
+          },
+          {
+            q: "Why are administrative passenger elevators strictly forbidden during building evacuation alarms?",
+            qAr: "لماذا يُحظر تماماً استخدام مصاعد الركاب أثناء إنذار إخلاء المبنى الإداري؟",
+            options: [
+              "Elevator motor rooms generate electrical surges that trip alarms",
+              "Elevator shafts channel smoke and power failure can trap occupants",
+              "Elevators are programmed to automatically shut down at top floors",
+              "Elevator counterweights create structural imbalances during alarms"
+            ],
+            correct: 1,
+            rationale: "Elevator shafts act as smoke chimneys, and electrical trips can trap occupants between floors in toxic air."
+          },
+          {
+            q: "How should Evacuation Support wardens address colleagues attempting to pack laptops and personal belongings during an alarm?",
+            qAr: "كيف يتعامل مشرفو الإخلاء مع الموظفين الذين يحاولون جمع حواسيبهم المحمولة وأغراضهم أثناء الإنذار؟",
+            options: [
+              "Grant employees 60 seconds to save files and disconnect power cables",
+              "Firmly direct them to leave all belongings and evacuate immediately",
+              "Permit employees to carry handheld laptops while leaving larger bags",
+              "Allow department managers to authorize quick retrieval of work files"
+            ],
+            correct: 1,
+            rationale: "Time lost gathering belongings is a primary cause of smoke inhalation casualties; life safety supersedes property."
+          },
+          {
+            q: "What is the protocol for sweeping an administrative office floor during an evacuation?",
+            qAr: "ما هو البروتوكول المتبع لتمشيط طابق المكاتب الإدارية أثناء الإخلاء؟",
+            options: [
+              "Walk the central hallway and check only rooms with lights turned on",
+              "Systematically sweep all offices, meeting rooms, and restrooms",
+              "Call out once down the corridor and proceed outside if no one answers",
+              "Check executive suites and assume open cubicle areas are fully clear"
+            ],
+            correct: 1,
+            rationale: "A systematic sweep ensures staff in restrooms or isolated meeting rooms are safely alerted and guided out."
+          },
+          {
+            q: "Once occupants reach the external Safe Assembly Point, what must the Evacuation Support warden execute?",
+            qAr: "بمجرد وصول الموظفين لنقطة التجمع الخارجية الآمنة، ما الذي يجب تنفيذه؟",
+            options: [
+              "Instruct staff to wait under building facade awnings for weather cover",
+              "Conduct headcount, maintain perimeter, and report to Team Leader",
+              "Authorize employees to disperse to personal vehicles in parking areas",
+              "Allow small groups to re-enter the lobby to retrieve office car keys"
+            ],
+            correct: 1,
+            rationale: "Accountability prevents missing-person false alarms, and preventing re-entry protects staff from lingering hazards."
+          },
+          {
+            q: "If an assigned primary exit stairwell is blocked by heavy smoke, what must Evacuation Support do?",
+            qAr: "إذا كان درج الهروب الأساسي مسدوداً بالدخان الكثيف، ما الإجراء الفوري؟",
+            options: [
+              "Instruct occupants to crawl beneath smoke through the primary stairs",
+              "Reroute occupants to secondary emergency stairwell and alert Command",
+              "Direct staff to gather inside an internal breakroom to shelter inside",
+              "Assemble evacuees in the adjacent elevator lobby to await firefighters"
+            ],
+            correct: 1,
+            rationale: "Evacuation routes always include secondary emergency stairs; wardens actively reroute staff away from smoke."
+          }
+        ],
+        liaison: [
+          {
+            q: "What is the primary role of the Liaison and External Agency Interface?",
+            qAr: "ما هو الدور الأساسي لضابط الاتصال والتنسيق مع الجهات الخارجية؟",
+            options: [
+              "Serving as single authorized interface with incoming emergency services",
+              "Directing Saudi Civil Defense crews on tactical hose nozzle deployment",
+              "Coordinating airport commercial runway schedules with flight dispatch",
+              "Conducting post-incident internal audits of facility building codes"
+            ],
+            correct: 0,
+            rationale: "The Liaison role serves as the single authorized interface between the internal Emergency Response Team and incoming external emergency services, such as Saudi Civil Defense and Crescent Moon."
+          },
+          {
+            q: "Where should the Liaison role stage when external emergency services are dispatched to the administrative building?",
+            qAr: "أين يجب أن يتمركز دور الاتصال عند استدعاء فرق الطوارئ الخارجية للمبنى الإداري؟",
+            options: [
+              "Inside the building security CCTV room to monitor perimeter cameras",
+              "At the designated Emergency Access Gate to expedite incoming entry",
+              "Inside the floor incident coordination post alongside the Team Leader",
+              "At the external employee assembly area to coordinate staff inquiries"
+            ],
+            correct: 1,
+            rationale: "Staging at the designated access gate ensures incoming fire apparatus and ambulances do not waste time seeking building entrances."
+          },
+          {
+            q: "What critical operational intelligence must the Liaison provide to the incoming Saudi Civil Defense Commander?",
+            qAr: "ما هي المعلومات الحيوية التي يقدمها ضابط الاتصال لقائد الدفاع المدني القادم؟",
+            options: [
+              "An itemized inventory of administrative computer servers and laptops",
+              "Building floor blueprints, hazard locations, and trapped staff status",
+              "A roster of senior airport executive managers and contact numbers",
+              "Past annual fire drill inspection certificates and compliance records"
+            ],
+            correct: 1,
+            rationale: "Emergency commanders require precise tactical blueprints, hazard locations, and trapped personnel status immediately."
+          },
+          {
+            q: "How does the Liaison role ensure rapid access through administrative security barriers for emergency vehicles?",
+            qAr: "كيف يضمن دور الاتصال العبور السريع لمركبات الطوارئ عبر الحواجز الأمنية للمبنى؟",
+            options: [
+              "By coordinating expedited gate barrier overrides before vehicles arrive",
+              "By verifying government photo identification cards for incoming drivers",
+              "By directing responding fire apparatus to use standard visitor entrances",
+              "By having emergency commanders sign the administrative entry visitor log"
+            ],
+            correct: 0,
+            rationale: "Pre-coordinating security gate overrides prevents seconds lost at administrative barriers."
+          },
+          {
+            q: "What is the strict protocol for the Liaison role if news reporters or cameras arrive at the gate?",
+            qAr: "ما هو البروتوكول الصارم لدور الاتصال إذا وصل صحفيون أو كاميرات إعلامية للبوابة؟",
+            options: [
+              "Provide an initial brief factual statement regarding employee safety",
+              "Direct all media representatives strictly to official KSIA Spokesperson",
+              "Answer press questions only if reporters present formal credentials",
+              "Invite journalists into the administrative lobby for an informal briefing"
+            ],
+            correct: 1,
+            rationale: "Only the official KSIA Media Spokesperson is authorized to release public statements to ensure verified, calm communications."
+          },
+          {
+            q: "What is the Liaison role's ongoing duty during unified emergency operations?",
+            qAr: "ما هي المسؤولية المستمرة لدور الاتصال أثناء العمليات المشتركة للطوارئ؟",
+            options: [
+              "Assuming operational command of municipal Civil Defense fire crews",
+              "Maintaining active communication between external command and Leader",
+              "Supervising building maintenance technicians during utility repairs",
+              "Arranging transportation logistics for evacuated administrative staff"
+            ],
+            correct: 1,
+            rationale: "The Liaison maintains continuous two-way communication between external incident commanders and internal facility leadership."
+          }
+        ]
+      };
+
+      // 3. APPLICATION STATE
+      const APP_STATE = {
+        participant: {
+          fullName: '',
+          employeeId: '',
+          assessmentDate: new Date().toISOString().split('T')[0]
+        },
+        hasStarted: false,
+
+        currentPhase: 'learning',
+        activeRoleIndex: 0,
+
+        totalDurationSeconds: 25 * 60,
+        remainingSeconds: 25 * 60,
+        timerInterval: null,
+        timerRunning: true,
+        warningTriggered: false,
+        warningDismissed: false,
+
+        arabicEnabled: false,
+
+        rolesCompleted: [false, false, false, false, false],
+
+        selectedRoleKey: null,
+        activeQuizQuestions: [],
+        currentQuizIndex: 0,
+        currentQuizAnswers: {},
+        attemptsHistory: {
+          leader: [],
+          suppression: [],
+          casualty: [],
+          evacuation: [],
+          liaison: []
+        },
+
+        lastQuizResult: null
+      };
+
+      // SEAMLESS INSTANT SCROLL TO TOP HELPER (Mobile-First)
+      function scrollToTop() {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        if (document.documentElement) document.documentElement.scrollTop = 0;
+        if (document.body) document.body.scrollTop = 0;
+      }
+
+      // COUNT DISTINCT ROLES WITH AT LEAST 1 COMPLETED ASSESSMENT (Minimum 2 Required)
+      function getDistinctRolesCompletedCount() {
+        return ERT_ROLES_DATA.filter(role => {
+          const attempts = APP_STATE.attemptsHistory[role.key];
+          return Array.isArray(attempts) && attempts.length > 0;
+        }).length;
+      }
+
+      // IN-APP NOTICES & CONFIRMATIONS (Zero native browser alert/confirm reliance)
+      let confirmModalCallback = null;
+
+      function showNoticeModal(options) {
+        const modal = document.getElementById('customNoticeModal');
+        const titleEl = document.getElementById('noticeModalTitle');
+        const msgEl = document.getElementById('noticeModalMessage');
+        const btnEl = document.getElementById('noticeModalBtn');
+        if (!modal) return;
+
+        if (titleEl) titleEl.textContent = options.title || 'Notice';
+        if (msgEl) msgEl.textContent = options.message || '';
+        if (btnEl) btnEl.textContent = options.buttonText || 'Acknowledge';
+
+        modal.classList.remove('hidden');
+      }
+
+      function closeNoticeModal() {
+        const modal = document.getElementById('customNoticeModal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      function showConfirmModal(options) {
+        const modal = document.getElementById('customConfirmModal');
+        const titleEl = document.getElementById('confirmModalTitle');
+        const msgEl = document.getElementById('confirmModalMessage');
+        const actionBtn = document.getElementById('confirmActionBtn');
+        const cancelBtn = document.getElementById('confirmCancelBtn');
+        if (!modal) return;
+
+        if (titleEl) titleEl.textContent = options.title || 'Please Confirm';
+        if (msgEl) msgEl.textContent = options.message || '';
+        if (actionBtn) {
+          actionBtn.textContent = options.confirmText || 'Confirm';
+          if (options.isDestructive) {
+            actionBtn.className = 'flex-1 py-2.5 px-4 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer';
+          } else {
+            actionBtn.className = 'flex-1 py-2.5 px-4 bg-safety-500 hover:bg-safety-400 text-slate-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all cursor-pointer';
+          }
+        }
+        if (cancelBtn) cancelBtn.textContent = options.cancelText || 'Cancel';
+
+        confirmModalCallback = options.onConfirm || null;
+        modal.classList.remove('hidden');
+      }
+
+      function closeConfirmModal(confirmed) {
+        const modal = document.getElementById('customConfirmModal');
+        if (modal) modal.classList.add('hidden');
+        if (confirmed && typeof confirmModalCallback === 'function') {
+          const cb = confirmModalCallback;
+          confirmModalCallback = null;
+          cb();
+        } else {
+          confirmModalCallback = null;
+        }
+      }
+
+      // SPLASH PAGE & CREDENTIALS HANDLERS (English only, un-prefilled)
+      function submitSplashPage(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const nameInput = document.getElementById('splashFullName');
+        const idInput = document.getElementById('splashEmployeeId');
+        const dateInput = document.getElementById('splashAssessmentDate');
+        const nameError = document.getElementById('splashNameError');
+        const idError = document.getElementById('splashIdError');
+
+        if (nameError) nameError.classList.add('hidden');
+        if (idError) idError.classList.add('hidden');
+
+        const fullName = nameInput ? nameInput.value.trim() : '';
+        const employeeId = idInput ? idInput.value.trim() : '';
+        const assessmentDate = dateInput ? dateInput.value.trim() : '';
+
+        if (!fullName) {
+          if (nameError) nameError.classList.remove('hidden');
+          if (nameInput) nameInput.focus();
+          return;
+        }
+
+        if (!employeeId) {
+          if (idError) idError.classList.remove('hidden');
+          if (idInput) idInput.focus();
+          return;
+        }
+
+        APP_STATE.participant.fullName = fullName;
+        APP_STATE.participant.employeeId = employeeId;
+        APP_STATE.participant.assessmentDate = assessmentDate || new Date().toISOString().split('T')[0];
+
+        // Permanently lock credentials so they cannot be modified later
+        if (nameInput) nameInput.disabled = true;
+        if (idInput) idInput.disabled = true;
+        if (dateInput) dateInput.disabled = true;
+
+        updateParticipantDisplays();
+
+        const splashModal = document.getElementById('splashPageModal');
+        if (splashModal) splashModal.classList.add('hidden');
+
+        if (!APP_STATE.hasStarted) {
+          APP_STATE.hasStarted = true;
+          startGlobalTimer();
+        }
+
+        scrollToTop();
+      }
+
+      function updateParticipantDisplays() {
+        const p = APP_STATE.participant;
+        const nameDisplay = document.getElementById('reportNameDisplay');
+        const idDisplay = document.getElementById('reportIdDisplay');
+        const dateDisplay = document.getElementById('reportGeneratedDate');
+        if (nameDisplay) nameDisplay.textContent = p.fullName || '—';
+        if (idDisplay) idDisplay.textContent = p.employeeId || '—';
+        if (dateDisplay) dateDisplay.textContent = `Date: ${p.assessmentDate}`;
+      }
+
+      // TIMER FUNCTIONS
+      function startGlobalTimer() {
+        if (APP_STATE.timerInterval) clearInterval(APP_STATE.timerInterval);
+
+        APP_STATE.timerInterval = setInterval(() => {
+          if (!APP_STATE.timerRunning) return;
+          APP_STATE.remainingSeconds--;
+
+          if (APP_STATE.remainingSeconds <= 0) {
+            APP_STATE.remainingSeconds = 0;
+            clearInterval(APP_STATE.timerInterval);
+            handleTimerExpired();
+          }
+
+          updateTimerDisplay();
+
+          if (APP_STATE.remainingSeconds <= 600 && !APP_STATE.warningTriggered) {
+            triggerTenMinuteWarning();
+          }
+        }, 1000);
+      }
+
+      function updateTimerDisplay() {
+        const mins = Math.floor(APP_STATE.remainingSeconds / 60);
+        const secs = APP_STATE.remainingSeconds % 60;
+        const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+        const timerEl = document.getElementById('countdownTimer');
+        const bannerTimerEl = document.getElementById('bannerTimerDisplay');
+        const timerContainer = document.getElementById('timerContainer');
+
+        if (timerEl) timerEl.textContent = formatted;
+        if (bannerTimerEl) bannerTimerEl.textContent = formatted;
+
+        if (APP_STATE.remainingSeconds <= 600 && timerContainer) {
+          timerContainer.classList.add('border-safety-500', 'bg-safety-500/10');
+          if (timerEl) timerEl.classList.add('text-safety-500');
+        }
+
+        if (APP_STATE.remainingSeconds <= 180 && timerContainer) {
+          timerContainer.classList.remove('border-safety-500', 'bg-safety-500/10');
+          timerContainer.classList.add('border-red-500', 'bg-red-500/20');
+          if (timerEl) {
+            timerEl.classList.remove('text-safety-500');
+            timerEl.classList.add('text-red-400');
+          }
+        }
+      }
+
+      function triggerTenMinuteWarning() {
+        APP_STATE.warningTriggered = true;
+        const modal = document.getElementById('timeWarningModal');
+        if (modal) modal.classList.remove('hidden');
+        const banner = document.getElementById('stickyWarningBanner');
+        if (banner) banner.classList.remove('hidden');
+      }
+
+      function dismissTimeWarning() {
+        APP_STATE.warningDismissed = true;
+        const modal = document.getElementById('timeWarningModal');
+        if (modal) modal.classList.add('hidden');
+      }
+
+      function handleTimerExpired() {
+        updateTimerDisplay();
+        showNoticeModal({
+          title: 'Session Concluded · انتهت الجلسة',
+          message: 'The 25-minute ERT training session has concluded. You can now review your comprehensive performance transcript and download your official report.',
+          buttonText: 'View Performance Report'
+        });
+        switchPhase('report');
+      }
+
+      // ARABIC TOGGLE
+      function toggleArabicSupport() {
+        APP_STATE.arabicEnabled = !APP_STATE.arabicEnabled;
+        const btn = document.getElementById('toggleArabicBtn');
+
+        if (APP_STATE.arabicEnabled) {
+          btn.classList.add('bg-safety-500/20', 'border-safety-500', 'text-amber-300');
+          btn.classList.remove('bg-aviation-900', 'border-aviation-700', 'text-slate-200');
+        } else {
+          btn.classList.remove('bg-safety-500/20', 'border-safety-500', 'text-amber-300');
+          btn.classList.add('bg-aviation-900', 'border-aviation-700', 'text-slate-200');
+        }
+
+        const arabicElements = document.querySelectorAll('.arabic-content');
+        arabicElements.forEach(el => {
+          if (APP_STATE.arabicEnabled) {
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        });
+
+        renderActiveRoleCard();
+      }
+
+      // PHASE NAVIGATION (STREAMLINED, ZERO SUB-MENU DISTRACTORS)
+      function switchPhase(phase) {
+        APP_STATE.currentPhase = phase;
+
+        document.getElementById('phaseLearning').classList.add('hidden');
+        document.getElementById('phaseAssessment').classList.add('hidden');
+        document.getElementById('phaseReport').classList.add('hidden');
+
+        if (phase === 'learning') {
+          document.getElementById('phaseLearning').classList.remove('hidden');
+        } else if (phase === 'assessment') {
+          document.getElementById('phaseAssessment').classList.remove('hidden');
+          renderCleanRoleSelection();
+        } else if (phase === 'report') {
+          document.getElementById('phaseReport').classList.remove('hidden');
+          renderReportTranscript();
+        }
+
+        scrollToTop();
+      }
+
+      // =========================================================================
+      // PHASE 1: 5 ROLES LEARNING MODULE
+      // =========================================================================
+
+      function renderRolePillsNav() {
+        const container = document.getElementById('rolePillsNav');
+        if (!container) return;
+        container.innerHTML = '';
+
+        ERT_ROLES_DATA.forEach((role, idx) => {
+          const isSelected = APP_STATE.activeRoleIndex === idx;
+          const isDone = APP_STATE.rolesCompleted[idx];
+
+          const btn = document.createElement('button');
+          btn.onclick = () => selectRole(idx);
+          btn.className = `p-2.5 rounded-xl text-xs font-semibold transition-all border text-left flex flex-col justify-between cursor-pointer ${
+            isSelected 
+              ? 'bg-aviation-700 border-safety-500 text-white shadow-sm' 
+              : 'bg-aviation-950/80 border-aviation-800 text-slate-300 hover:bg-aviation-800'
+          }`;
+
+          btn.innerHTML = `
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] text-safety-500 font-bold uppercase">Role 0${idx + 1}</span>
+              ${isDone ? '<span class="text-emerald-400 text-xs font-bold">✓</span>' : ''}
+            </div>
+            <div class="truncate font-bold text-white text-[11px]">${role.name}</div>
+          `;
+
+          container.appendChild(btn);
+        });
+
+        updateProgressHeader();
+      }
+
+      function selectRole(idx) {
+        APP_STATE.activeRoleIndex = idx;
+        renderRolePillsNav();
+        renderActiveRoleCard();
+        scrollToTop();
+      }
+
+      function renderActiveRoleCard() {
+        const container = document.getElementById('activeRoleCardContainer');
+        if (!container) return;
+        const role = ERT_ROLES_DATA[APP_STATE.activeRoleIndex];
+        const isDone = APP_STATE.rolesCompleted[role.id];
+
+        container.innerHTML = `
+          <div class="bg-aviation-900 border border-aviation-700 rounded-2xl p-5 md:p-6 shadow-xl space-y-5">
+            
+            <!-- Role Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-aviation-800">
+              <div>
+                <span class="text-[10px] uppercase font-bold tracking-wider text-safety-500">ROLE 0${role.id + 1} OF 5</span>
+                <h3 class="text-lg md:text-xl font-bold text-white tracking-tight flex items-center gap-2">
+                  <span>${role.name}</span>
+                  <span class="arabic-content ${APP_STATE.arabicEnabled ? '' : 'hidden'} text-xs font-arabic text-amber-300 font-normal">(${role.nameAr})</span>
+                </h3>
+              </div>
+              <div class="flex items-center gap-2">
+                ${isDone ? '<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">✓ Completed</span>' : ''}
+              </div>
+            </div>
+
+            <!-- Official Definition Callout -->
+            <div class="bg-aviation-950 p-4 rounded-xl border border-aviation-800 space-y-1.5">
+              <div class="text-[10px] uppercase font-bold text-safety-500 tracking-wider">Official Role Responsibility</div>
+              <p class="text-xs md:text-sm text-slate-100 font-semibold leading-relaxed">
+                ${role.officialDefinition}
+              </p>
+              <div class="arabic-content ${APP_STATE.arabicEnabled ? '' : 'hidden'} text-xs text-amber-200/90 font-arabic pt-1" dir="rtl">
+                ${role.officialDefinitionAr}
+              </div>
+            </div>
+
+            <!-- Administrative Offices Context -->
+            <div class="text-xs md:text-sm text-slate-300 leading-relaxed bg-aviation-900/50 p-3.5 rounded-xl border border-aviation-800/80">
+              <strong class="text-white block text-xs uppercase mb-1">Administrative Offices Context:</strong>
+              ${role.officeContext}
+              <div class="arabic-content ${APP_STATE.arabicEnabled ? '' : 'hidden'} text-xs text-amber-200/90 font-arabic mt-2 pt-2 border-t border-aviation-800/50" dir="rtl">
+                ${role.officeContextAr}
+              </div>
+            </div>
+
+            <!-- Core Responsibilities (Bullet Cards) -->
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Key Administrative Action Responsibilities</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                ${role.keyResponsibilities.map(resp => `
+                  <div class="p-3 rounded-xl bg-aviation-950/60 border border-aviation-800/80 flex items-start gap-2.5 text-xs text-slate-300">
+                    <span class="text-base shrink-0">${resp.icon}</span>
+                    <div>
+                      <div>${resp.text}</div>
+                      <div class="arabic-content ${APP_STATE.arabicEnabled ? '' : 'hidden'} text-[11px] text-amber-300 font-arabic mt-1" dir="rtl">${resp.ar}</div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Quick Practical Activity -->
+            <div class="pt-4 border-t border-aviation-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-bold text-white uppercase tracking-wider">
+                  ${role.activity.title}
+                </h4>
+                <span class="text-[10px] text-slate-400">Quick Decision Activity</span>
+              </div>
+
+              <p class="text-xs text-amber-200 font-medium">
+                ${role.activity.prompt}
+              </p>
+              <p class="arabic-content ${APP_STATE.arabicEnabled ? '' : 'hidden'} text-xs text-amber-300 font-arabic" dir="rtl">
+                ${role.activity.promptAr}
+              </p>
+
+              <!-- Option Buttons -->
+              <div class="space-y-2" id="activityOptions-${role.id}">
+                ${role.activity.options.map((opt, oIdx) => `
+                  <button onclick="handleRoleActivitySelect(${role.id}, ${oIdx})" class="w-full text-left p-3 rounded-xl border border-aviation-800 bg-aviation-950/70 hover:bg-aviation-800 transition-all text-xs text-slate-200 flex items-start gap-2.5 active:scale-[0.99]">
+                    <span class="w-5 h-5 rounded-md bg-aviation-800 text-slate-300 flex items-center justify-center font-bold text-xs shrink-0">${String.fromCharCode(65 + oIdx)}</span>
+                    <span class="leading-relaxed">${opt.text}</span>
+                  </button>
+                `).join('')}
+              </div>
+
+              <!-- Feedback Box -->
+              <div id="activityFeedback-${role.id}" class="${isDone ? 'block' : 'hidden'} p-3 rounded-xl text-xs bg-emerald-500/20 border border-emerald-500/40 text-emerald-300">
+                ${isDone ? '✓ Role activity completed successfully.' : ''}
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      }
+
+      function handleRoleActivitySelect(roleId, optionIndex) {
+        const role = ERT_ROLES_DATA[roleId];
+        const selected = role.activity.options[optionIndex];
+        const feedbackEl = document.getElementById(`activityFeedback-${roleId}`);
+        const optionsContainer = document.getElementById(`activityOptions-${roleId}`);
+
+        if (!feedbackEl || !optionsContainer) return;
+
+        if (selected.isCorrect) {
+          APP_STATE.rolesCompleted[roleId] = true;
+          feedbackEl.className = 'p-3 rounded-xl text-xs bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 block font-medium';
+          feedbackEl.innerHTML = `✓ ${selected.feedback}`;
+
+          const buttons = optionsContainer.querySelectorAll('button');
+          buttons.forEach((btn, bIdx) => {
+            if (bIdx === optionIndex) {
+              btn.className = 'w-full text-left p-3 rounded-xl border border-emerald-500 bg-emerald-500/15 text-xs text-white font-medium flex items-start gap-2.5';
+            } else {
+              btn.className = 'w-full text-left p-3 rounded-xl border border-aviation-900 bg-aviation-950/40 opacity-40 text-xs text-slate-400 flex items-start gap-2.5 pointer-events-none';
+            }
+          });
+
+          updateProgressHeader();
+          renderRolePillsNav();
+
+          const completedCount = APP_STATE.rolesCompleted.filter(Boolean).length;
+          if (completedCount === 5) {
+            // Once all 5 roles have been completed, immediately go to the Assessment screen so they can select the role(s)
+            setTimeout(() => {
+              switchPhase('assessment');
+              scrollToTop();
+            }, 600);
+          } else if (roleId < 4) {
+            // Automatically switch to next role and scroll immediately to top of page
+            setTimeout(() => {
+              selectRole(roleId + 1);
+              scrollToTop();
+            }, 500);
+          } else {
+            // If another role made it 5/5
+            setTimeout(() => {
+              switchPhase('assessment');
+              scrollToTop();
+            }, 600);
+          }
+
+        } else {
+          feedbackEl.className = 'p-3 rounded-xl text-xs bg-red-500/20 border border-red-500/40 text-red-300 block';
+          feedbackEl.innerHTML = `✕ ${selected.feedback}`;
+        }
+      }
+
+      function updateProgressHeader() {
+        const completedCount = APP_STATE.rolesCompleted.filter(Boolean).length;
+        const total = 5;
+
+        const countText = document.getElementById('rolesProgressCount');
+        const statusText = document.getElementById('rolesProgressStatus');
+        const proceedBtn = document.getElementById('proceedToAssessmentBtn');
+        const bottomSummary = document.getElementById('bottomSummaryText');
+        const assessmentLockIcon = document.getElementById('assessmentLockIcon');
+        const mobileAssessmentLock = document.getElementById('mobileAssessmentLock');
+
+        if (countText) countText.textContent = `${completedCount} / ${total} Completed`;
+
+        if (completedCount === total) {
+          if (statusText) {
+            statusText.textContent = 'All roles completed!';
+            statusText.className = 'text-[10px] text-emerald-400 font-bold';
+          }
+          if (bottomSummary) bottomSummary.innerHTML = '<strong class="text-emerald-400">All 5 roles reviewed! Proceed to role assessment.</strong>';
+          if (proceedBtn) {
+            proceedBtn.disabled = false;
+            proceedBtn.classList.remove('disabled:opacity-40', 'disabled:cursor-not-allowed');
+            proceedBtn.classList.add('animate-pulse');
+          }
+          if (assessmentLockIcon) assessmentLockIcon.textContent = '✓';
+          if (mobileAssessmentLock) mobileAssessmentLock.textContent = '✓';
+        } else {
+          if (statusText) {
+            statusText.textContent = `${total - completedCount} remaining`;
+            statusText.className = 'text-[10px] text-amber-400 font-medium';
+          }
+          if (bottomSummary) bottomSummary.textContent = `Review all 5 roles to unlock the assessment (${completedCount}/5 complete).`;
+          if (proceedBtn) {
+            proceedBtn.disabled = true;
+            proceedBtn.classList.add('disabled:opacity-40', 'disabled:cursor-not-allowed');
+            proceedBtn.classList.remove('animate-pulse');
+          }
+          if (assessmentLockIcon) assessmentLockIcon.textContent = '🔒';
+          if (mobileAssessmentLock) mobileAssessmentLock.textContent = '🔒';
+        }
+      }
+
+      // =========================================================================
+      // PHASE 2: ROLE SELECTION, QUIZ & RETAKES
+      // =========================================================================
+
+      function renderCleanRoleSelection() {
+        const container = document.getElementById('cleanRoleSelectionCards');
+        if (!container) return;
+        container.innerHTML = '';
+
+        const distinctCount = getDistinctRolesCompletedCount();
+        const headerContainer = document.getElementById('roleSelectionHeaderContainer');
+        if (headerContainer) {
+          if (distinctCount === 0) {
+            headerContainer.innerHTML = `
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[10px] font-bold text-safety-500 uppercase tracking-wider">Step 1 of 2 · Primary Evaluation</span>
+                <span class="text-[11px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/30">0 / 2 Roles Completed</span>
+              </div>
+              <h2 class="text-base sm:text-lg md:text-xl font-bold text-white mt-1">
+                Select Your Primary ERT Role
+              </h2>
+              <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                Every participant must complete a minimum of two role assessment tests (6 multiple-choice questions each, 70% passing threshold).
+              </p>
+            `;
+          } else if (distinctCount === 1) {
+            headerContainer.innerHTML = `
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[10px] font-bold text-safety-500 uppercase tracking-wider">Step 2 of 2 · Secondary Evaluation</span>
+                <span class="text-[11px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/30">1 / 2 Roles Completed</span>
+              </div>
+              <h2 class="text-base sm:text-lg md:text-xl font-bold text-white mt-1">
+                Select Your Secondary ERT Role
+              </h2>
+              <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                First role evaluation complete! Please choose a secondary role below to fulfill the 2-role assessment requirement.
+              </p>
+            `;
+          } else {
+            headerContainer.innerHTML = `
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">✓ Requirement Met</span>
+                    <span class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/30">${distinctCount} Roles Evaluated</span>
+                  </div>
+                  <h2 class="text-base sm:text-lg md:text-xl font-bold text-white mt-1">
+                    ERT Role Evaluations Completed
+                  </h2>
+                  <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                    You have fulfilled the required minimum of two role assessment tests. You can download your official PDF report or evaluate additional roles.
+                  </p>
+                </div>
+                <div class="shrink-0 pt-1 sm:pt-0">
+                  <button onclick="handleDownloadReportWithBleep()" class="bleep-glow w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-safety-500 to-amber-500 hover:from-safety-400 text-slate-950 flex items-center justify-center gap-2 shadow-lg shadow-safety-500/25 cursor-pointer">
+                    <svg class="w-4 h-4 text-slate-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                      <polyline points="7 10 12 15 17 10"/>
+                      <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    <span>DOWNLOAD REPORT</span>
+                  </button>
+                </div>
+              </div>
+            `;
+          }
+        }
+
+        ERT_ROLES_DATA.forEach((role, idx) => {
+          const attempts = APP_STATE.attemptsHistory[role.key] || [];
+          const attemptCount = attempts.length;
+          const bestScore = attemptCount > 0 ? Math.max(...attempts.map(a => a.scorePercent)) : null;
+          const hasPassed = bestScore !== null && bestScore >= 70;
+
+          const card = document.createElement('div');
+          card.className = 'bg-aviation-900 border border-aviation-700/80 rounded-2xl p-4 sm:p-5 shadow-lg flex flex-col justify-between hover:border-safety-500/70 transition-all';
+
+          let btnLabel = 'Select & Start Test →';
+          if (attemptCount > 0) {
+            btnLabel = 'Retake Role Test ↻';
+          } else if (distinctCount === 1) {
+            btnLabel = 'Select Secondary Role →';
+          }
+
+          card.innerHTML = `
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-[10px] font-bold text-safety-500 uppercase tracking-wider">ROLE 0${idx + 1}</span>
+                ${hasPassed 
+                  ? `<span class="text-[11px] text-emerald-400 bg-emerald-500/20 px-2.5 py-0.5 rounded-full border border-emerald-500/30 font-bold">Passed (${bestScore}%)</span>`
+                  : (attemptCount > 0 ? `<span class="text-[11px] text-amber-400 bg-amber-500/20 px-2.5 py-0.5 rounded-full border border-amber-500/30 font-bold">Score: ${bestScore}%</span>` : '')}
+              </div>
+              <h3 class="text-base font-bold text-white tracking-tight">${role.name}</h3>
+              <p class="text-xs text-slate-400 mt-1 line-clamp-2">${role.officialDefinition}</p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-aviation-800">
+              <button onclick="startQuizForRole('${role.key}')" class="w-full py-3 px-4 rounded-xl text-xs font-bold transition-all active:scale-[0.98] cursor-pointer ${
+                hasPassed 
+                  ? 'bg-aviation-800 hover:bg-aviation-700 text-slate-200 border border-aviation-600' 
+                  : (attemptCount > 0 ? 'bg-aviation-800 hover:bg-aviation-700 text-slate-200 border border-aviation-600' : 'bg-safety-500 hover:bg-safety-400 text-slate-950 shadow-md shadow-safety-500/20')
+              }">
+                ${btnLabel}
+              </button>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+
+        document.getElementById('assessmentSelectionView').classList.remove('hidden');
+        document.getElementById('assessmentQuizView').classList.add('hidden');
+        document.getElementById('assessmentResultsView').classList.add('hidden');
+        scrollToTop();
+      }
+
+      function startQuizForRole(roleKey) {
+        APP_STATE.selectedRoleKey = roleKey;
+        APP_STATE.activeQuizQuestions = QUIZ_BANK[roleKey] || [];
+        APP_STATE.currentQuizIndex = 0;
+        APP_STATE.currentQuizAnswers = {};
+
+        const role = ERT_ROLES_DATA.find(r => r.key === roleKey);
+        const roleTag = document.getElementById('quizRoleTag');
+        const roleTitle = document.getElementById('quizRoleTitle');
+        const totalNum = document.getElementById('quizTotalQuestionsNum');
+
+        if (roleTag) roleTag.textContent = `ROLE 0${role.id + 1}: ${role.name.toUpperCase()}`;
+        if (roleTitle) roleTitle.textContent = `${role.name} Evaluation Test`;
+        if (totalNum) totalNum.textContent = String(APP_STATE.activeQuizQuestions.length);
+
+        document.getElementById('assessmentSelectionView').classList.add('hidden');
+        document.getElementById('assessmentResultsView').classList.add('hidden');
+        document.getElementById('assessmentQuizView').classList.remove('hidden');
+
+        renderCurrentQuestion();
+        scrollToTop();
+      }
+
+      function renderCurrentQuestion() {
+        const qIndex = APP_STATE.currentQuizIndex;
+        const total = APP_STATE.activeQuizQuestions.length;
+        const question = APP_STATE.activeQuizQuestions[qIndex];
+
+        const currentNum = document.getElementById('quizCurrentQuestionNum');
+        const progressBar = document.getElementById('quizProgressBar');
+        if (currentNum) currentNum.textContent = String(qIndex + 1);
+        if (progressBar) progressBar.style.width = `${((qIndex + 1) / total) * 100}%`;
+
+        const qText = document.getElementById('quizQuestionText');
+        const qArabic = document.getElementById('quizQuestionArabic');
+        if (qText) qText.textContent = question.q;
+        if (qArabic) {
+          qArabic.textContent = question.qAr || '';
+          if (APP_STATE.arabicEnabled) {
+            qArabic.classList.remove('hidden');
+          } else {
+            qArabic.classList.add('hidden');
+          }
+        }
+
+        const choicesContainer = document.getElementById('quizChoicesContainer');
+        if (choicesContainer) {
+          choicesContainer.innerHTML = '';
+          const currentAnswer = APP_STATE.currentQuizAnswers[qIndex];
+
+          question.options.forEach((optText, optIdx) => {
+            const isSelected = currentAnswer === optIdx;
+            const btn = document.createElement('button');
+            btn.onclick = () => selectQuizChoice(optIdx);
+            btn.className = `w-full text-left p-3.5 rounded-xl border transition-all flex items-start gap-3 active:scale-[0.99] min-h-[48px] cursor-pointer ${
+              isSelected 
+                ? 'bg-safety-500/15 border-safety-500 text-white shadow-md' 
+                : 'bg-aviation-950/60 border-aviation-800 text-slate-300 hover:bg-aviation-800 hover:text-white'
+            }`;
+
+            btn.innerHTML = `
+              <div class="w-5 h-5 rounded-md flex items-center justify-center text-xs font-bold shrink-0 transition-colors ${
+                isSelected ? 'bg-safety-500 text-slate-950' : 'bg-aviation-800 text-slate-400'
+              }">
+                ${String.fromCharCode(65 + optIdx)}
+              </div>
+              <span class="text-xs md:text-sm font-medium leading-relaxed">${optText}</span>
+            `;
+
+            choicesContainer.appendChild(btn);
+          });
+        }
+
+        const prevBtn = document.getElementById('quizPrevBtn');
+        const nextBtn = document.getElementById('quizNextBtn');
+        const submitBtn = document.getElementById('quizSubmitBtn');
+
+        if (prevBtn) prevBtn.disabled = qIndex === 0;
+
+        if (qIndex === total - 1) {
+          if (nextBtn) nextBtn.classList.add('hidden');
+          if (submitBtn) submitBtn.classList.remove('hidden');
+        } else {
+          if (nextBtn) nextBtn.classList.remove('hidden');
+          if (submitBtn) submitBtn.classList.add('hidden');
+        }
+
+        scrollToTop();
+      }
+
+      function selectQuizChoice(choiceIdx) {
+        APP_STATE.currentQuizAnswers[APP_STATE.currentQuizIndex] = choiceIdx;
+        renderCurrentQuestion();
+
+        // After completing a question, smoothly advance to next question with scroll to top
+        if (APP_STATE.currentQuizIndex < APP_STATE.activeQuizQuestions.length - 1) {
+          setTimeout(() => {
+            navigateQuiz(1);
+          }, 350);
+        } else {
+          scrollToTop();
+        }
+      }
+
+      function navigateQuiz(delta) {
+        const newIndex = APP_STATE.currentQuizIndex + delta;
+        if (newIndex >= 0 && newIndex < APP_STATE.activeQuizQuestions.length) {
+          APP_STATE.currentQuizIndex = newIndex;
+          renderCurrentQuestion();
+          scrollToTop();
+        }
+      }
+
+      function confirmExitQuiz() {
+        showConfirmModal({
+          title: 'Return to Role Selection?',
+          message: 'Unsubmitted answers on this role evaluation test will be reset. Are you sure you want to exit and return to role selection?',
+          confirmText: 'Yes, Return',
+          cancelText: 'Stay in Test',
+          isDestructive: true,
+          onConfirm: () => {
+            renderCleanRoleSelection();
+            scrollToTop();
+          }
+        });
+      }
+
+      function submitQuiz() {
+        const total = APP_STATE.activeQuizQuestions.length;
+        const answeredCount = Object.keys(APP_STATE.currentQuizAnswers).length;
+
+        if (answeredCount < total) {
+          const unanswered = total - answeredCount;
+          showConfirmModal({
+            title: 'Unanswered Questions',
+            message: `You have ${unanswered} unanswered question${unanswered > 1 ? 's' : ''}. Unanswered questions will be scored as incorrect. Are you sure you want to submit now?`,
+            confirmText: 'Submit Anyway',
+            cancelText: 'Review Questions',
+            isDestructive: false,
+            onConfirm: () => executeQuizSubmission()
+          });
+          return;
+        }
+
+        executeQuizSubmission();
+      }
+
+      function executeQuizSubmission() {
+        const total = APP_STATE.activeQuizQuestions.length;
+
+        let correctCount = 0;
+        const breakdown = APP_STATE.activeQuizQuestions.map((q, idx) => {
+          const userChoice = APP_STATE.currentQuizAnswers[idx];
+          const isCorrect = userChoice === q.correct;
+          if (isCorrect) correctCount++;
+
+          return {
+            questionIndex: idx + 1,
+            questionText: q.q,
+            options: q.options,
+            userChoice: userChoice !== undefined ? userChoice : -1,
+            correctChoice: q.correct,
+            isCorrect: isCorrect,
+            rationale: q.rationale
+          };
+        });
+
+        const scorePercent = Math.round((correctCount / total) * 100);
+        const passed = scorePercent >= 70;
+
+        const attemptRecord = {
+          roleKey: APP_STATE.selectedRoleKey,
+          timestamp: new Date().toISOString(),
+          correctCount: correctCount,
+          totalCount: total,
+          scorePercent: scorePercent,
+          passed: passed,
+          breakdown: breakdown
+        };
+
+        if (!APP_STATE.attemptsHistory[APP_STATE.selectedRoleKey]) {
+          APP_STATE.attemptsHistory[APP_STATE.selectedRoleKey] = [];
+        }
+        APP_STATE.attemptsHistory[APP_STATE.selectedRoleKey].push(attemptRecord);
+        APP_STATE.lastQuizResult = attemptRecord;
+
+        renderQuizResults(attemptRecord);
+      }
+
+      function renderQuizResults(result) {
+        const role = ERT_ROLES_DATA.find(r => r.key === result.roleKey);
+
+        document.getElementById('assessmentQuizView').classList.add('hidden');
+        document.getElementById('assessmentResultsView').classList.remove('hidden');
+
+        const roleTag = document.getElementById('resultRoleNameTag');
+        const statusHeadline = document.getElementById('resultStatusHeadline');
+        const passBadge = document.getElementById('resultPassBadge');
+        const summaryMsg = document.getElementById('resultSummaryMessage');
+        const percentText = document.getElementById('resultPercentageText');
+        const correctFraction = document.getElementById('resultCorrectFraction');
+
+        if (roleTag) roleTag.textContent = `${role.name.toUpperCase()} · EVALUATION RESULTS`;
+        if (percentText) percentText.textContent = `${result.scorePercent}%`;
+        if (correctFraction) correctFraction.textContent = `${result.correctCount} / ${result.totalCount} Correct`;
+
+        if (result.passed) {
+          if (statusHeadline) statusHeadline.textContent = 'Assessment Passed';
+          if (passBadge) {
+            passBadge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+            passBadge.textContent = 'PASSED (≥ 70%)';
+          }
+          if (summaryMsg) summaryMsg.textContent = 'You have met the required competency threshold for this administrative role.';
+          if (percentText) percentText.className = 'text-2xl md:text-3xl font-mono font-bold tabular-nums text-emerald-400';
+        } else {
+          if (statusHeadline) statusHeadline.textContent = 'Review Recommended';
+          if (passBadge) {
+            passBadge.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-500/30';
+            passBadge.textContent = 'FAILED (< 70%)';
+          }
+          if (summaryMsg) summaryMsg.textContent = 'Score fell below the 70% threshold. Review the questions below and retake to improve.';
+          if (percentText) percentText.className = 'text-2xl md:text-3xl font-mono font-bold tabular-nums text-amber-400';
+        }
+
+        // Render Action Buttons and Notice based on minimum 2 roles requirement
+        const distinctCount = getDistinctRolesCompletedCount();
+        const noticeBox = document.getElementById('resultsProgressNoticeContainer');
+        const actionContainer = document.getElementById('resultsActionButtonsContainer');
+
+        if (distinctCount < 2) {
+          if (noticeBox) {
+            noticeBox.className = 'mt-4 p-3.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-xs text-amber-200 block';
+            noticeBox.innerHTML = `
+              <div class="flex items-start gap-2.5">
+                <span class="text-amber-400 font-bold text-sm shrink-0">ℹ</span>
+                <div>
+                  <div class="font-bold text-white text-xs">Role 1 of 2 Complete · Secondary Role Required</div>
+                  <div class="text-[11px] text-amber-200/90 mt-0.5 leading-relaxed">
+                    Every participant must complete a minimum of two role assessment tests. Right after the first test, you can retake this test or select your secondary role. Your official report download will unlock once two roles are completed.
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+          if (actionContainer) {
+            actionContainer.innerHTML = `
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full">
+                <button onclick="retakeCurrentRoleQuiz()" class="py-3 px-5 rounded-xl text-xs font-bold bg-aviation-800 hover:bg-aviation-700 text-slate-200 border border-aviation-600 transition-all text-center cursor-pointer">
+                  ↻ Retake This Test
+                </button>
+                <button onclick="returnToRoleSelection()" class="py-3 px-5 rounded-xl text-xs font-bold bg-safety-500 hover:bg-safety-400 text-slate-950 transition-all shadow-md shadow-safety-500/20 text-center flex-1 cursor-pointer">
+                  Select Secondary Role →
+                </button>
+              </div>
+            `;
+          }
+        } else {
+          if (noticeBox) {
+            noticeBox.className = 'mt-4 p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-xs text-emerald-200 block';
+            noticeBox.innerHTML = `
+              <div class="flex items-start gap-2.5">
+                <span class="text-emerald-400 font-bold text-sm shrink-0">✓</span>
+                <div>
+                  <div class="font-bold text-white text-xs">Evaluation Requirement Met (${distinctCount} Roles Evaluated)</div>
+                  <div class="text-[11px] text-emerald-200/90 mt-0.5 leading-relaxed">
+                    You have successfully completed ${distinctCount} role evaluations (minimum requirement: 2). You may now retake the last test or download your official report.
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+          if (actionContainer) {
+            actionContainer.innerHTML = `
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full">
+                <button onclick="retakeCurrentRoleQuiz()" class="py-3 px-4 rounded-xl text-xs font-bold bg-aviation-800 hover:bg-aviation-700 text-slate-200 border border-aviation-600 transition-all text-center cursor-pointer">
+                  ↻ Retake Last Test
+                </button>
+                <button onclick="handleDownloadReportWithBleep()" id="downloadReportActionBtn" class="bleep-glow py-3.5 px-6 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-safety-500 to-amber-500 hover:from-safety-400 text-slate-950 transition-all flex items-center justify-center gap-2 shadow-lg shadow-safety-500/25 ring-2 ring-safety-400/80 active:scale-95 cursor-pointer flex-1">
+                  <svg class="w-4 h-4 text-slate-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  <span>DOWNLOAD REPORT</span>
+                </button>
+                <button onclick="returnToRoleSelection()" class="py-3 px-4 rounded-xl text-xs font-semibold bg-aviation-900 hover:bg-aviation-800 text-slate-300 border border-aviation-700 transition-colors text-center cursor-pointer">
+                  Evaluate Other Roles
+                </button>
+              </div>
+            `;
+          }
+
+          // Trigger subtle bleep sound to guide attention to the Download report button
+          setTimeout(() => {
+            playBleepEffect();
+          }, 350);
+        }
+
+        const list = document.getElementById('resultsQuestionsList');
+        if (list) {
+          list.innerHTML = '';
+          result.breakdown.forEach((item) => {
+            const card = document.createElement('div');
+            card.className = `p-3.5 rounded-xl border ${
+              item.isCorrect ? 'bg-aviation-950/40 border-aviation-800' : 'bg-amber-500/5 border-amber-500/30'
+            }`;
+
+            const userChoiceText = item.userChoice >= 0 ? item.options[item.userChoice] : 'Unanswered';
+            const correctChoiceText = item.options[item.correctChoice];
+
+            card.innerHTML = `
+              <div class="flex items-start justify-between gap-2">
+                <div class="text-xs font-semibold text-white">Q0${item.questionIndex}: ${item.questionText}</div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold shrink-0 ${
+                  item.isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'
+                }">
+                  ${item.isCorrect ? '✓ Correct' : '✕ Missed'}
+                </span>
+              </div>
+
+              <div class="mt-2.5 pt-2 border-t border-aviation-800/60 text-xs grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div>
+                  <span class="text-slate-400 block text-[10px] uppercase font-semibold">Your Answer:</span>
+                  <span class="${item.isCorrect ? 'text-emerald-300' : 'text-amber-300'} font-medium">${userChoiceText}</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block text-[10px] uppercase font-semibold">Correct Operational Response:</span>
+                  <span class="text-emerald-400 font-medium">${correctChoiceText}</span>
+                </div>
+              </div>
+
+              <div class="mt-2 text-[11px] text-slate-300 bg-aviation-950/80 p-2 rounded-lg">
+                <strong class="text-safety-500 font-semibold block mb-0.5">Guidance:</strong>
+                ${item.rationale}
+              </div>
+            `;
+
+            list.appendChild(card);
+          });
+        }
+
+        scrollToTop();
+      }
+
+      function retakeCurrentRoleQuiz() {
+        if (APP_STATE.selectedRoleKey) {
+          startQuizForRole(APP_STATE.selectedRoleKey);
+          scrollToTop();
+        }
+      }
+
+      function returnToRoleSelection() {
+        renderCleanRoleSelection();
+        scrollToTop();
+      }
+
+      // Audio Synthesizer Bleep Effect (Zero external dependencies)
+      function playBleepEffect() {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContext) return;
+          const ctx = new AudioContext();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          const now = ctx.currentTime;
+          osc.type = 'sine';
+          // Pleasant high-tech double chirp / bleep
+          osc.frequency.setValueAtTime(880, now); // A5
+          osc.frequency.setValueAtTime(1320, now + 0.08); // E6
+
+          gain.gain.setValueAtTime(0.22, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.22);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.24);
+        } catch (e) {
+          // AudioContext blocked or not supported
+        }
+      }
+
+      function handleDownloadReportWithBleep() {
+        playBleepEffect();
+        generatePDFReport();
+        setTimeout(() => {
+          switchPhase('report');
+        }, 300);
+      }
+
+      function handleNativePrintReport() {
+        if (APP_STATE.currentPhase !== 'report') {
+          switchPhase('report');
+        }
+        window.print();
+      }
+
+      // =========================================================================
+      // PHASE 3: PERFORMANCE REPORT TRANSCRIPT & jsPDF EXPORTER
+      // =========================================================================
+
+      function getAssessedRolesSummary() {
+        const assessed = [];
+        ERT_ROLES_DATA.forEach(role => {
+          const attempts = APP_STATE.attemptsHistory[role.key] || [];
+          if (attempts.length > 0) {
+            assessed.push(role.name);
+          }
+        });
+        return assessed.length > 0 ? assessed.join(', ') : 'None Yet';
+      }
+
+      function renderReportTranscript() {
+        const nameDisplay = document.getElementById('reportNameDisplay');
+        const idDisplay = document.getElementById('reportIdDisplay');
+        const rolesDisplay = document.getElementById('reportRolesAssessedDisplay');
+        const timeDisplay = document.getElementById('reportTimeElapsedDisplay');
+        const dateDisplay = document.getElementById('reportGeneratedDate');
+
+        if (nameDisplay) nameDisplay.textContent = APP_STATE.participant.fullName;
+        if (idDisplay) idDisplay.textContent = APP_STATE.participant.employeeId;
+        if (rolesDisplay) rolesDisplay.textContent = getAssessedRolesSummary();
+
+        const elapsedSecs = APP_STATE.totalDurationSeconds - APP_STATE.remainingSeconds;
+        const eMins = Math.floor(elapsedSecs / 60);
+        const eSecs = elapsedSecs % 60;
+        if (timeDisplay) timeDisplay.textContent = `${eMins}m ${eSecs}s / 25m`;
+        if (dateDisplay) {
+          const dStr = APP_STATE.participant.assessmentDate || new Date().toISOString().split('T')[0];
+          dateDisplay.textContent = `Date: ${dStr}`;
+        }
+
+        const tableBody = document.getElementById('reportTableBody');
+        let totalEvaluations = 0;
+        let totalPassedCount = 0;
+        const identifiedStrengths = [];
+        const areasToReview = [];
+
+        if (tableBody) {
+          tableBody.innerHTML = '';
+
+          ERT_ROLES_DATA.forEach(role => {
+            const attempts = APP_STATE.attemptsHistory[role.key] || [];
+            const count = attempts.length;
+            const highestScore = count > 0 ? Math.max(...attempts.map(a => a.scorePercent)) : null;
+            const passed = highestScore !== null && highestScore >= 70;
+
+            if (count > 0) {
+              totalEvaluations++;
+              if (passed) {
+                totalPassedCount++;
+                identifiedStrengths.push(`${role.name}: Verified operational competency (${highestScore}%).`);
+              } else {
+                areasToReview.push(`${role.name}: Score ${highestScore}% is below the 70% threshold. Review operational procedures.`);
+              }
+            }
+
+            const tr = document.createElement('tr');
+            tr.className = 'hover:bg-aviation-900/40 transition-colors';
+            tr.innerHTML = `
+              <td class="px-4 py-2.5">
+                <div class="font-bold text-white">${role.name}</div>
+              </td>
+              <td class="px-3 py-2.5 text-center font-mono text-slate-300">
+                ${count}
+              </td>
+              <td class="px-3 py-2.5 text-center font-mono font-bold ${
+                highestScore !== null ? (highestScore >= 70 ? 'text-emerald-400' : 'text-amber-400') : 'text-slate-400'
+              }">
+                ${highestScore !== null ? highestScore + '%' : '—'}
+              </td>
+              <td class="px-3 py-2.5 text-center font-mono text-slate-400">
+                70%
+              </td>
+              <td class="px-4 py-2.5 text-right">
+                ${
+                  count === 0 
+                    ? '<span class="text-slate-400">Not Tested</span>'
+                    : (passed 
+                        ? '<span class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">PASS</span>' 
+                        : '<span class="text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">REVIEW</span>')
+                }
+              </td>
+            `;
+            tableBody.appendChild(tr);
+          });
+        }
+
+        const overallBadge = document.getElementById('reportOverallBadge');
+        if (overallBadge) {
+          if (totalEvaluations === 0) {
+            overallBadge.textContent = 'STATUS: NO EVALUATIONS COMPLETED';
+            overallBadge.className = 'inline-block px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider bg-aviation-800 text-slate-400 border border-aviation-700';
+          } else if (totalPassedCount === totalEvaluations) {
+            overallBadge.textContent = 'STATUS: PASSED (100% PASS RATE)';
+            overallBadge.className = 'inline-block px-2.5 py-0.5 rounded text-xs font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+          } else {
+            overallBadge.textContent = `STATUS: PARTIAL (${totalPassedCount}/${totalEvaluations} PASSED)`;
+            overallBadge.className = 'inline-block px-2.5 py-0.5 rounded text-xs font-bold tracking-wider uppercase bg-amber-500/20 text-amber-400 border border-amber-500/30';
+          }
+        }
+
+        const strengthsList = document.getElementById('reportStrengthsList');
+        if (strengthsList) {
+          strengthsList.innerHTML = '';
+          if (identifiedStrengths.length === 0) {
+            strengthsList.innerHTML = '<li class="text-slate-400">Complete role evaluations to generate identified strengths.</li>';
+          } else {
+            identifiedStrengths.forEach(st => {
+              const li = document.createElement('li');
+              li.className = 'flex items-start gap-1.5';
+              li.innerHTML = `<span class="text-emerald-400 font-bold">✓</span><span>${st}</span>`;
+              strengthsList.appendChild(li);
+            });
+          }
+        }
+
+        const areasList = document.getElementById('reportAreasList');
+        if (areasList) {
+          areasList.innerHTML = '';
+          if (areasToReview.length === 0) {
+            areasList.innerHTML = '<li class="text-slate-400">No deficient operational areas detected. Excellent performance across completed roles.</li>';
+          } else {
+            areasToReview.forEach(ar => {
+              const li = document.createElement('li');
+              li.className = 'flex items-start gap-1.5';
+              li.innerHTML = `<span class="text-safety-500 font-bold">▲</span><span>${ar}</span>`;
+              areasList.appendChild(li);
+            });
+          }
+        }
+      }
+
+      // ACCURATELY SPACED jsPDF REPORT (NO OVERLAPS, EXACT REQUIRED FIELDS ONLY)
+      function generatePDFReport() {
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+          showNoticeModal({
+            title: 'PDF Component Notice',
+            message: 'Direct PDF file generation requires the jsPDF library. If you are operating completely offline or if the script is blocked, you can use the "Print / Save" button to print or save your report as a clean PDF using your browser.'
+          });
+          return;
+        }
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4'
+        });
+
+        const p = APP_STATE.participant;
+        const elapsedSecs = APP_STATE.totalDurationSeconds - APP_STATE.remainingSeconds;
+        const eMins = Math.floor(elapsedSecs / 60);
+        const eSecs = elapsedSecs % 60;
+        const timeElapsedStr = `${eMins}m ${eSecs}s / 25m`;
+        const now = new Date();
+        const dateStr = APP_STATE.participant.assessmentDate || now.toLocaleDateString('en-GB');
+
+        let totalEvaluations = 0;
+        let totalPassed = 0;
+        let highestOverallScore = 0;
+        const evaluatedRows = [];
+        const strengthsList = [];
+        const reviewList = [];
+        const assessedRolesNames = [];
+
+        ERT_ROLES_DATA.forEach(role => {
+          const attempts = APP_STATE.attemptsHistory[role.key] || [];
+          const count = attempts.length;
+          const best = count > 0 ? Math.max(...attempts.map(a => a.scorePercent)) : null;
+          const isPassed = best !== null && best >= 70;
+
+          if (count > 0) {
+            totalEvaluations++;
+            assessedRolesNames.push(role.name);
+            if (isPassed) totalPassed++;
+            if (best > highestOverallScore) highestOverallScore = best;
+
+            evaluatedRows.push({
+              role: role.name,
+              attempts: count,
+              score: `${best}%`,
+              status: isPassed ? 'PASSED' : 'REVIEW NEEDED'
+            });
+
+            if (isPassed) {
+              strengthsList.push(`Strong operational knowledge demonstrated in: ${role.name}`);
+            } else {
+              reviewList.push(`Review needed for: ${role.name} (Highest Score: ${best}% vs 70% threshold)`);
+            }
+          } else {
+            evaluatedRows.push({
+              role: role.name,
+              attempts: 0,
+              score: 'N/A',
+              status: 'NOT ATTEMPTED'
+            });
+          }
+        });
+
+        const assessedRolesText = assessedRolesNames.length > 0 ? assessedRolesNames.join(', ') : 'None';
+        const overallStatusText = totalEvaluations === 0 
+          ? 'INCOMPLETE (NO TESTS ATTEMPTED)' 
+          : (totalPassed === totalEvaluations ? 'PASSED' : 'REVIEW NEEDED');
+
+        const pageWidth = 210;
+        const margin = 14;
+        const contentWidth = pageWidth - (margin * 2);
+        let curY = 14;
+
+        // 1. HEADER (Deep Navy Banner)
+        doc.setFillColor(11, 25, 44);
+        doc.rect(margin, curY, contentWidth, 24, 'F');
+
+        doc.setFillColor(245, 158, 11);
+        doc.rect(margin, curY + 23, contentWidth, 1.2, 'F');
+
+        doc.setTextColor(255, 255, 255);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(13);
+        doc.text('KING SALMAN INTERNATIONAL AIRPORT', margin + 6, curY + 9);
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(10);
+        doc.setTextColor(245, 158, 11);
+        doc.text('PERFORMANCE REPORT', margin + 6, curY + 18);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(203, 213, 225);
+        doc.text(`Date Taken: ${dateStr}`, margin + contentWidth - 6, curY + 14, { align: 'right' });
+
+        curY += 30; // Clean spacing down to participant box
+
+        // 2. PARTICIPANT METADATA BOX (Spacious, No Overlaps)
+        doc.setFillColor(248, 250, 252);
+        doc.setDrawColor(226, 232, 240);
+        doc.rect(margin, curY, contentWidth, 26, 'FD');
+
+        // Line 1: Labels
+        doc.setTextColor(100, 116, 139);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.text('NAME', margin + 6, curY + 6);
+        doc.text('EMPLOYEE ID', margin + 55, curY + 6);
+        doc.text('TIME TAKEN', margin + 105, curY + 6);
+        doc.text('OVERALL STATUS', margin + 145, curY + 6);
+
+        // Line 1: Values
+        doc.setTextColor(15, 23, 42);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(8.5);
+        doc.text(p.fullName, margin + 6, curY + 11.5);
+        doc.text(p.employeeId, margin + 55, curY + 11.5);
+        doc.text(timeElapsedStr, margin + 105, curY + 11.5);
+
+        if (overallStatusText.startsWith('PASSED')) {
+          doc.setTextColor(16, 185, 129);
+        } else {
+          doc.setTextColor(217, 119, 6);
+        }
+        doc.text(overallStatusText, margin + 145, curY + 11.5);
+
+        // Line 2: Role(s) Assessed
+        doc.setTextColor(100, 116, 139);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.text('ROLE(S) ASSESSED:', margin + 6, curY + 20);
+
+        doc.setTextColor(30, 41, 59);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.text(assessedRolesText, margin + 40, curY + 20);
+
+        curY += 33; // Clean spacing down to table section
+
+        // 3. ATTEMPT HISTORY TABLE
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9.5);
+        doc.setTextColor(11, 25, 44);
+        doc.text('TEST ATTEMPT HISTORY BY ROLE', margin, curY);
+
+        curY += 4.5;
+
+        // Table Header Bar
+        doc.setFillColor(15, 23, 42);
+        doc.rect(margin, curY, contentWidth, 7, 'F');
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.setTextColor(255, 255, 255);
+        doc.text('ROLE NAME', margin + 4, curY + 4.8);
+        doc.text('ATTEMPTS', margin + 85, curY + 4.8, { align: 'center' });
+        doc.text('HIGHEST SCORE', margin + 120, curY + 4.8, { align: 'center' });
+        doc.text('THRESHOLD', margin + 150, curY + 4.8, { align: 'center' });
+        doc.text('STATUS', margin + contentWidth - 4, curY + 4.8, { align: 'right' });
+
+        curY += 7;
+
+        // Table Rows
+        evaluatedRows.forEach((row, rIdx) => {
+          const rowBg = rIdx % 2 === 0 ? [255, 255, 255] : [248, 250, 252];
+          doc.setFillColor(rowBg[0], rowBg[1], rowBg[2]);
+          doc.rect(margin, curY, contentWidth, 7, 'F');
+          doc.setDrawColor(226, 232, 240);
+          doc.line(margin, curY + 7, margin + contentWidth, curY + 7);
+
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8);
+          doc.setTextColor(30, 41, 59);
+          doc.text(row.role, margin + 4, curY + 4.8);
+
+          doc.setFont('helvetica', 'normal');
+          doc.text(String(row.attempts), margin + 85, curY + 4.8, { align: 'center' });
+
+          doc.setFont('helvetica', 'bold');
+          doc.text(row.score, margin + 120, curY + 4.8, { align: 'center' });
+
+          doc.setFont('helvetica', 'normal');
+          doc.setTextColor(100, 116, 139);
+          doc.text('70%', margin + 150, curY + 4.8, { align: 'center' });
+
+          if (row.status === 'PASSED') {
+            doc.setTextColor(16, 185, 129);
+            doc.setFont('helvetica', 'bold');
+          } else if (row.status === 'REVIEW NEEDED') {
+            doc.setTextColor(217, 119, 6);
+            doc.setFont('helvetica', 'bold');
+          } else {
+            doc.setTextColor(148, 163, 184);
+            doc.setFont('helvetica', 'normal');
+          }
+          doc.text(row.status, margin + contentWidth - 4, curY + 4.8, { align: 'right' });
+
+          curY += 7;
+        });
+
+        curY += 10; // Spacious clearance
+
+        // 4. KEY STRENGTHS IDENTIFIED
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9.5);
+        doc.setTextColor(11, 25, 44);
+        doc.text('KEY STRENGTHS IDENTIFIED', margin, curY);
+
+        curY += 4.5;
+
+        const strengthsBoxHeight = Math.max(18, (strengthsList.length || 1) * 6 + 6);
+        doc.setFillColor(240, 253, 244);
+        doc.setDrawColor(187, 247, 208);
+        doc.rect(margin, curY, contentWidth, strengthsBoxHeight, 'FD');
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(22, 101, 52);
+
+        let sy = curY + 5.5;
+        if (strengthsList.length === 0) {
+          doc.text('• No role evaluations completed during this session.', margin + 4, sy);
+        } else {
+          strengthsList.forEach(st => {
+            doc.text(`• ${st}`, margin + 4, sy);
+            sy += 5.5;
+          });
+        }
+
+        curY += strengthsBoxHeight + 8; // Spacious clearance
+
+        // 5. AREAS TO REVIEW (ACTIONABLE FEEDBACK)
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9.5);
+        doc.setTextColor(11, 25, 44);
+        doc.text('AREAS TO REVIEW (ACTIONABLE FEEDBACK)', margin, curY);
+
+        curY += 4.5;
+
+        const reviewBoxHeight = Math.max(18, (reviewList.length || 1) * 6 + 6);
+        doc.setFillColor(254, 243, 199);
+        doc.setDrawColor(253, 230, 138);
+        doc.rect(margin, curY, contentWidth, reviewBoxHeight, 'FD');
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(146, 64, 14);
+
+        let ry = curY + 5.5;
+        if (reviewList.length === 0) {
+          doc.text('• Participant achieved passing standards across all evaluated roles with no critical areas identified.', margin + 4, ry);
+        } else {
+          reviewList.forEach(rv => {
+            doc.text(`• ${rv}`, margin + 4, ry);
+            ry += 5.5;
+          });
+        }
+
+        // Clean save
+        const cleanId = (p.employeeId || 'KSIA').replace(/[^a-zA-Z0-9_-]/g, '_');
+        doc.save(`KSIA_ERT_Performance_Report_${cleanId}.pdf`);
+      }
+
+      // INITIALIZATION
+      window.addEventListener('DOMContentLoaded', () => {
+        const dateInput = document.getElementById('splashAssessmentDate');
+        const todayStr = new Date().toISOString().split('T')[0];
+        if (dateInput && !dateInput.value) {
+          dateInput.value = todayStr;
+        }
+        APP_STATE.participant.assessmentDate = todayStr;
+
+        renderRolePillsNav();
+        renderActiveRoleCard();
+        updateParticipantDisplays();
+      });
+
+    </script>
+  </body>
+</html>
